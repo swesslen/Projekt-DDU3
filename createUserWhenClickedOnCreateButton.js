@@ -4,7 +4,7 @@ let inputName = document.getElementById("login-name")
 let confirmLoginPassword = document.getElementById("confirm-login-password");
 
 createButton.addEventListener("click", function(){
-    if(inputPassword === confirmLoginPassword) {
+    if(inputPassword.value === confirmLoginPassword.value) {
         let inputNa = inputName.value;
         let inputPass = inputPassword.value;
         let request = new Request(`http://0.0.0.0:8000/create`,{
