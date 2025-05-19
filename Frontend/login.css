@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    color: azure;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #FC814A;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.login-container {
+    background-color: #3A506B;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #1C2541;
+}
+
+.input-description {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-button {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #FC814A;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    color: white;
+}
