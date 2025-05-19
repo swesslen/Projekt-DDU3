@@ -1,9 +1,12 @@
 [
-    {
-    "name" : "test",
-    "password" : "123",
-    "favoriteJokes" : [],
-    "img" : ""
-    }
-
+  {
+    "name": "test",
+    "password": "123",
+    "favoriteJokes": [],
+    "img": ""
+  },
+  {
+    "name": 3,
+    "password": "123"
+  }
 ]
