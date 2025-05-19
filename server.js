@@ -1,11 +1,15 @@
-function handler(request) {
+async function handler(request) {
     let url = new URL(request.url);
 
     if(url.pathname = "/create") {
-        let response = new Response(null, {
-            status: 200
-        })
-        return response;
+        if(request.method === "POST") {
+            let resource = await request.json();
+            console.log(resource)
+            let response = new Response(null, {
+                status: 200
+            })
+            return response;
+        }
     }
 
 }
