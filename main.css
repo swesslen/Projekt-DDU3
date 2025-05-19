@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(to right, lightgray, lightcyan);
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
 }
 
 body,
@@ -32,12 +32,12 @@ main {
 #up,
 #down {
     border-radius: 10px;
+    background-color: #1C2541;
 }
 
 #left {
     grid-row: 1/3;
     grid-column: 1/2;
-    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ main {
     padding: 15px 0;
     border-radius: 10px;
     margin-top: 50px;
-    background-color: orange;
+    background-color: #FC814A;
 }
 
 #up {
@@ -87,7 +87,7 @@ main {
     width: auto;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: cyan;
+    background-color: #FC814A;
 }
 
 #down {
@@ -103,10 +103,11 @@ main {
 
 #down p {
     margin: 0;
+    color: white;
 }
 
 #add_button {
     padding: 10px 50px;
     border-radius: 10px;
-    background-color: cyan;
+    background-color: #FC814A;
 }
