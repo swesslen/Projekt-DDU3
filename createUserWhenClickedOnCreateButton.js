@@ -10,7 +10,7 @@ createButton.addEventListener("click", function(){
         let request = new Request(`http://0.0.0.0:8000/create`,{
             method: "POST",
             body: JSON.stringify({name: inputNa, password: inputPass}),
-            headers: {"Content-Type": "json/application"}
+            headers: {"Content-Type": "application/json"}
         })
         fetch(request);
     }
