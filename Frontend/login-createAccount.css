@@ -23,6 +23,7 @@ main {
     padding: 30px;
     border-radius: 20px;
     background-color: #1C2541;
+    width: 250px;
 }
 
 .input-description {
