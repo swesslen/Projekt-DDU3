@@ -1,5 +1,5 @@
 function handler(request) {
-    let url = request.url;
+    let url = new URL(request.url);
 
     if(url.pathname = "/login") {
         let response = new Response(null, {
