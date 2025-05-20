@@ -12,7 +12,7 @@ createButton.addEventListener("click", function(){
         body: JSON.stringify({name: inputNa, password: inputPass}),
         headers: {"Content-Type": "application/json"}
     })
-    fetch(request).then(fulfill)
+    fetch(request).then(fulfill, rejectHandler)
 
     function fulfill(response) {
         if(response.status === 200) {
@@ -27,8 +27,9 @@ createButton.addEventListener("click", function(){
             confirmTheAccount.textContent = "User already exist with that name";
             confirmTheAccount.style.color = "red";
         }
-
-
+    }
+    function rejectHandler(error) {
+        confirmTheAccount.textContent = error;
     }
     
 })
