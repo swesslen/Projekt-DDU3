@@ -20,7 +20,7 @@ async function handler(request) {
         if(request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             console.log(resource)
-            let response = new Response(null, {
+            let response = new Response(JSON.stringify({message: "Account created successfully!"}), {
                 status: 200,
                 headers: headersCors
             });
