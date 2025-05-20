@@ -29,7 +29,8 @@ createButton.addEventListener("click", function(){
         }
     }
     function rejectHandler(error) {
-        confirmTheAccount.textContent = error;
+        confirmTheAccount.textContent = "Network error";
+        confirmTheAccount.style.color = "red";
     }
     
 })
