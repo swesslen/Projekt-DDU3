@@ -6,7 +6,9 @@
     "img": ""
   },
   {
-    "name": 3,
-    "password": "123"
+    "name": "test",
+    "password": "123",
+    "favoriteJokes": [],
+    "img": ""
   }
 ]
