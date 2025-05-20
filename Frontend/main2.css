@@ -27,23 +27,31 @@ main {
 
 /* BUTTONS */
 
+@keyframes colorSwitch {
+    from {color: black;}
+    to{color: white;}
+}
+
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: #FC814A;
     border-radius: 10px;
     border: none;
     padding: 10px;
     font-size: 20px;
     color: black;
+
     width: fit-content;
     justify-self: center;
     align-self: center;
 }
 
 .button:hover {
-    color: white;
+    animation-name: colorSwitch;
+    animation-duration: 1s;
 }
 
 .button:active {
@@ -58,7 +66,23 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+}
 
+#left p {
+    justify-self: center;
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+#pfp {
+    justify-self: center;
+    align-self: flex-end;
+
+    height: 175px;
+    width: 175px;
+    border-radius: 50%;
+
+    background-color: #FC814A;
 }
 
 /* UPPER AREA */
@@ -70,10 +94,21 @@ main {
     grid-template-rows: 2fr 1fr 2fr;
 }
 
+#up h2, #up p {
+    justify-self: center;
+    align-self: center;
+}
+
 /* DOWNWARDS AREA */ 
 
 #down {
     grid-area: 2 / 2 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
-
+#down p {
+    justify-self: center;
+    align-self: center;
+}
