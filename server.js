@@ -1,4 +1,4 @@
-import {addToTheJsonFileFunction} from "./addToTheJsonFileFunction.js"
+import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 
 
 async function handler(request) {
@@ -11,41 +11,49 @@ async function handler(request) {
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json")
     headersCors.set("access-control-allow-origin", "*");
-    
-    if(url.pathname === "/create") {
+
+    if (url.pathname === "/create") {
         if (request.method === "OPTIONS") { // Måste ha annars funkar ej
             headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
             headersCors.set("Access-Control-Allow-Headers", "Content-Type");
             return new Response(null, {
-              status: 204,
-              headers: headersCors
+                status: 204,
+                headers: headersCors
             });
         }
-        if(request.method === "POST") {
+        if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            if(resource.name == "" || resource.password == "") {
-                let response = new Response(JSON.stringify({message: "Missing username or password"}), {
+            if (resource.name == "" || resource.password == "") {
+                let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
                 });
                 return response;
             }
-            for(let user of jsonData) {
-                if(user.name == resource.name) {
-                    let response = new Response(JSON.stringify({message: "User already exist"}), {
+            for (let user of jsonData) {
+                if (user.name == resource.name) {
+                    let response = new Response(JSON.stringify({ message: "User already exist" }), {
                         status: 409,
                         headers: headersCors
                     });
                     return response;
-                } 
+                }
             }
             addToTheJsonFileFunction(resource);
-            let response = new Response(JSON.stringify({message: "Account created successfully!"}), {
+            let response = new Response(JSON.stringify({ message: "Account created successfully!" }), {
                 status: 200,
                 headers: headersCors
             });
             return response;
         }
+    }
+
+    if (url.pathname === "/login") {
+
+        if (request.method === "POST") {
+
+        }
+
     }
 
 }
