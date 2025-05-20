@@ -23,6 +23,13 @@ async function handler(request) {
         }
         if(request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
+            if(resource.name == "" || resource.password == "") {
+                let response = new Response(JSON.stringify({message: "Missing username or password"}), {
+                    status: 400,
+                    headers: headersCors
+                });
+                return response;
+            }
             for(let user of jsonData) {
                 if(user.name == resource.name) {
                     let response = new Response(JSON.stringify({message: "User already exist"}), {
