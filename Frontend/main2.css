@@ -1,0 +1,79 @@
+/* EVERYTHING */
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 50px 70px;
+    font-size: 20px;
+    height: 80vh;
+}
+
+
+#left,
+#up,
+#down {
+    border-radius: 10px;
+    background-color: #1C2541;
+    color: white;
+}
+
+/* BUTTONS */
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FC814A;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    width: fit-content;
+    justify-self: center;
+    align-self: center;
+}
+
+.button:hover {
+    color: white;
+}
+
+.button:active {
+    color: white;
+    font-size: 15px;
+}
+
+/* LEFT AREA */
+
+#left {
+    grid-area: 1 / 1 / 3 / 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+/* UPPER AREA */
+
+#up {
+    grid-area: 1 / 2 / 2 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+}
+
+/* DOWNWARDS AREA */ 
+
+#down {
+    grid-area: 2 / 2 / 3 / 4;
+}
+
+
