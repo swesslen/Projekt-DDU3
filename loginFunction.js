@@ -14,10 +14,12 @@ loginButton.addEventListener("click", function () {
     })
     fetch(request).then(fulfill)
 
-    function fulfill(response) {
+    async function fulfill(response) {
+        let resource = await response.json();
+        console.log(resource)
         if (response.status === 200) {
-            confirmTheAccount.textContent = "Account was succefull created";
-            confirmTheAccount.style.color = "lightgreen";
+            errorMessage.innerHTML = `${resource.name}`;
+            errorMessage.style.color = "lightgreen";
         }
         if (response.status === 400) {
             errorMessage.textContent = "Missing username or password";

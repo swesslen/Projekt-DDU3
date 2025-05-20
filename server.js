@@ -59,8 +59,17 @@ async function handler(request) {
                 });
                 return response;
             }
-        }
 
+            let existingUser = jsonData.find(user => user.name == resource.name && user.password == resource.password);
+
+            if (existingUser) {
+                let response = new Response(JSON.stringify(existingUser), {
+                    status: 200,
+                    headers: headersCors
+                });
+                return response;
+            }
+        }
     }
 }
 
