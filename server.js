@@ -1,3 +1,6 @@
+import {addToTheJsonFileFunction} from "./addToTheJsonFileFunction.js"
+
+
 async function handler(request) {
     let url = new URL(request.url);
     console.log(request)
@@ -19,7 +22,7 @@ async function handler(request) {
         }
         if(request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            console.log(resource)
+            addToTheJsonFileFunction(resource);
             let response = new Response(JSON.stringify({message: "Account created successfully!"}), {
                 status: 200,
                 headers: headersCors
