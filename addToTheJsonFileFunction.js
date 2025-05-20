@@ -1,6 +1,6 @@
-export function addToTheJsonFileFunction(resource) {
+export async function addToTheJsonFileFunction(resource) {
     const filePath = "./database.json";
-    const jsonString = Deno.readTextFile(filePath);
+    const jsonString = await Deno.readTextFile(filePath);
     const jsonData = JSON.parse(jsonString);
     const newObject = { 
         name: resource.name, 
@@ -9,5 +9,5 @@ export function addToTheJsonFileFunction(resource) {
         img: ""  
     };
     jsonData.push(newObject);
-    Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
+    await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
 }
