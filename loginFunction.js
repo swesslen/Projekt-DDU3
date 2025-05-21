@@ -107,3 +107,5 @@ backToStartButton.addEventListener("click", function () {
     collectionSection.style.display = "none";
     dashboredSection.style.display = "flex";
 })
+
+

@@ -96,5 +96,13 @@
     "password": "q234",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/459335/pexels-photo-459335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "n30",
+    "password": "test123",
+    "favoriteJokes": [
+      "Every night, I have hard time remembering something, but then it dawns on me."
+    ],
+    "img": "https://images.pexels.com/photos/87812/pexels-photo-87812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
