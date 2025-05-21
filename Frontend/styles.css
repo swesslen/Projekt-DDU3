@@ -1,5 +1,13 @@
 /* LOGIN & CREATE ACCOUNT */
 
+#login {
+    display: none;
+}
+
+#create-account {
+    display: none;
+}
+
 a {
     color: #ffffff;
 }
@@ -47,6 +55,10 @@ a:hover {
 }
 
 /* DASHBORED */
+
+#dashbored {
+    display: none;
+}
 
 body {
     margin: 0;
