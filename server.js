@@ -24,6 +24,16 @@ async function handler(request) {
             let resource = await request.json()
             for(let user of jsonData) {
                 if(user.name === resource.name) {
+                    for(let joke of user.favoriteJokes) {
+                        if(joke === resource.joke) {
+                            let response = new Response(JSON.stringify({message: "The joke is already in your collection"}), {
+                                status: 409,
+                                headers: headersCors
+                            })
+                            return response
+                            
+                        }
+                    }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
                     let response = new Response(JSON.stringify({message: "The joke was added successfully"}), {
                         status: 200,
@@ -76,9 +86,7 @@ async function handler(request) {
                 });
                 return response;
             }
-
             let existingUser = jsonData.find(user => user.name == resource.name && user.password == resource.password);
-
             if (existingUser) {
                 let response = new Response(JSON.stringify(existingUser), {
                     status: 200,
