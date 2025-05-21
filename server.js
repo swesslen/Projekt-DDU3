@@ -39,6 +39,7 @@ async function handler(request) {
                     return response;
                 }
             }
+
             addToTheJsonFileFunction(resource);
             let response = new Response(JSON.stringify({ message: "Account created successfully!" }), {
                 status: 200,
