@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
@@ -12,7 +14,7 @@ a:hover {
     color: #FC814A;
 }
 
-main {
+#login-main, #create-account-main {
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -29,7 +31,7 @@ main {
     margin-bottom: 10px;
 }
 
-input {
+#login-main input, #create-account-main input {
     width: 100%;
     box-sizing: border-box;
 }

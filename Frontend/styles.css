@@ -1,12 +1,62 @@
-/* EVERYTHING */
+/* LOGIN & CREATE ACCOUNT */
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #FC814A;
+}
+
+#login-main, #create-account-main {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.login-container {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #1C2541;
+    width: 250px;
+}
+
+.input-description {
+    margin-bottom: 10px;
+}
+
+#login-main input, #create-account-main input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-button {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 50px;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: #FC814A;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* DASHBORED */
 
 body {
     margin: 0;
     height: 100vh;
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    font-family: Arial, Helvetica, sans-serif;
+    color: azure;
 }
 
-main {
+#dashbored-main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -22,7 +72,7 @@ main {
 #down {
     border-radius: 10px;
     background-color: #1C2541;
-    color: white;
+    color: azure;
 }
 
 /* BUTTONS */
@@ -56,7 +106,7 @@ main {
 }
 
 .button:hover {
-    color: white;
+    color: azure;
     text-shadow: rgb(255, 255, 255) 1px 0 15px;
     font-size: 23px;
 
@@ -68,7 +118,7 @@ main {
 }
 
 .button:active {
-    color: white;
+    color: azure;
     font-size: 17px;
 }
 
