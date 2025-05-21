@@ -4,6 +4,20 @@ body {
     color: azure;
 }
 
+#login-section {
+    display: block;
+}
+
+#dashbored-section {
+    display: none;
+    justify-content: center;
+    gap: 25px;
+}
+
+#collection-section {
+    display: none;
+}
+
 a {
     color: #ffffff;
 }
@@ -12,7 +26,8 @@ a:hover {
     color: #FC814A;
 }
 
-main {
+#login-section,
+#create-section {
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -48,4 +63,18 @@ input {
 .login-button:hover {
     cursor: pointer;
     color: white;
+}
+
+.profile-section,
+#welcome-section {
+    background-color: #1C2541;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: green;
 }
