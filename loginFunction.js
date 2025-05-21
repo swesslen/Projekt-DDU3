@@ -13,6 +13,8 @@ let testTextJoke = document.getElementById("test-text-joke");
 let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
+let testButton = document.getElementById("testButton")
+
 
 loginButton.addEventListener("click", function () {
     let inputNa = inputName.value;
@@ -50,6 +52,25 @@ async function loadDashbored(user) {
     });
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
+    let joke = null;
+    generateJokeButton.addEventListener("click", async function(){ 
+        let newJoke = await getJoke(); 
+        joke = newJoke[0].joke;
+        testTextJoke.textContent = newJoke[0].joke;
+    })
+    testButton.addEventListener("click", function() { // KNAPP ID
+        let request = new Request("http://0.0.0.0:8000/login/dashboard", {
+            method: "PATCH",
+            body: JSON.stringify({name: user.name, joke: joke}),
+            headers: {"Content-Type" : "application/json"}
+        })
+        console.log(request)
+        fetch(request);
+        
+
+    })
+    
+
     document.querySelectorAll(".profile-picture").forEach(profilePicture => {
         profilePicture.style.background = `url(${user.img})`;
         profilePicture.style.backgroundSize = "cover";
