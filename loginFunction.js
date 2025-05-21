@@ -41,4 +41,5 @@ async function loadDashbored(user) {
     usernameDisplay.textContent = `${user.name}`;
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
+    console.log(user);
 }
