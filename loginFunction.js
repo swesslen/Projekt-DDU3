@@ -6,8 +6,12 @@ let errorMessage = document.getElementById("error-message");
 let loginSection = document.getElementById("login-section");
 let dashboredSection = document.getElementById("dashbored-section");
 
-let generateJokeButton = document.getElementById("generate-joke")
-let testTextJoke = document.getElementById("test-text-joke")
+let collectionButton = document.getElementById("my-collection");
+let generateJokeButton = document.getElementById("generate-joke");
+let testTextJoke = document.getElementById("test-text-joke");
+
+let collectionSection = document.getElementById("collection-section");
+let backToStartButton = document.getElementById("back-to-start");
 
 let testButton = document.getElementById("testButton")
 
@@ -43,8 +47,9 @@ async function loadDashbored(user) {
 
     loginSection.style.display = "none";
     dashboredSection.style.display = "flex";
-    const usernameDisplay = document.getElementById("username-display");
-    usernameDisplay.textContent = `${user.name}`;
+    document.querySelectorAll(".username-display").forEach(name => {
+        name.textContent = `${user.name}`;
+    });
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
     let joke = null;
@@ -66,13 +71,31 @@ async function loadDashbored(user) {
     })
     
 
+    document.querySelectorAll(".profile-picture").forEach(profilePicture => {
+        profilePicture.style.background = `url(${user.img})`;
+        profilePicture.style.backgroundSize = "cover";
+        profilePicture.style.backgroundPosition = "center";
+    });
+    generateJokeButton.addEventListener("click", async function () {
+        let newJoke = await getJoke();
+        testTextJoke.textContent = newJoke[0].joke;
+    })
 }
 
+collectionButton.addEventListener("click", function () {
+    dashboredSection.style.display = "none";
+    collectionSection.style.display = "flex";
+})
 
 async function getJoke() {
     let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
-        headers: {"X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9"}
+        headers: { "X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9" }
     })
     let response = await fetch(request)
     return await response.json();
 }
+
+backToStartButton.addEventListener("click", function () {
+    collectionSection.style.display = "none";
+    dashboredSection.style.display = "flex";
+})
