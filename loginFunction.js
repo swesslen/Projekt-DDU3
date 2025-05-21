@@ -35,11 +35,22 @@ loginButton.addEventListener("click", function () {
 })
 
 async function loadDashbored(user) {
+
     loginSection.style.display = "none";
     dashboredSection.style.display = "flex";
     const usernameDisplay = document.getElementById("username-display");
     usernameDisplay.textContent = `${user.name}`;
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
-    console.log(user);
+    let newJoke = getJoke(); // Här får vi ett skämt
+
+}
+
+
+async function getJoke() {
+    let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
+        headers: {"X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9"}
+    })
+    let response = await fetch(request)
+    return await response.json();
 }
