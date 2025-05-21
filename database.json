@@ -35,7 +35,12 @@
   {
     "name": "bildtest",
     "password": "123",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      "My toddler is refusing to nap. He’s guilty of resisting a rest.",
+      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
+      "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
+      "My toddler is refusing to nap. He’s guilty of resisting a rest."
+    ],
     "img": {}
   },
   {
@@ -55,5 +60,13 @@
     "password": "1",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/1420440/pexels-photo-1420440.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Elias",
+    "password": "123",
+    "favoriteJokes": [
+      "What do you call a man wearing a rug on his head? Matt."
+    ],
+    "img": "https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
