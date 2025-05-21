@@ -6,6 +6,9 @@ let errorMessage = document.getElementById("error-message");
 let loginSection = document.getElementById("login-section");
 let dashboredSection = document.getElementById("dashbored-section");
 
+let generateJokeButton = document.getElementById("generate-joke")
+let testTextJoke = document.getElementById("test-text-joke")
+
 
 loginButton.addEventListener("click", function () {
     let inputNa = inputName.value;
@@ -42,7 +45,11 @@ async function loadDashbored(user) {
     usernameDisplay.textContent = `${user.name}`;
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
-    let newJoke = getJoke(); // Här får vi ett skämt
+    generateJokeButton.addEventListener("click", async function(){ 
+        let newJoke = await getJoke(); 
+        testTextJoke.textContent = newJoke[0].joke;
+    })
+    
 
 }
 
