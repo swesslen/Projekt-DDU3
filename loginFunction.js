@@ -13,7 +13,8 @@ let testTextJoke = document.getElementById("test-text-joke");
 let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
-let testButton = document.getElementById("testButton")
+let testButton = document.getElementById("testButton");
+let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke")
 
 
 loginButton.addEventListener("click", function () {
@@ -58,14 +59,21 @@ async function loadDashbored(user) {
         joke = newJoke[0].joke;
         testTextJoke.textContent = newJoke[0].joke;
     })
-    testButton.addEventListener("click", function() { // KNAPP ID
+    testButton.addEventListener("click", async function() { // KNAPP ID
         let request = new Request("http://0.0.0.0:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({name: user.name, joke: joke}),
             headers: {"Content-Type" : "application/json"}
         })
-        console.log(request)
-        fetch(request);
+        let response = await fetch(request);
+        if(response.status === 200) {
+            checkResponseForAddJoke.textContent = "The joke was added successfully";
+            checkResponseForAddJoke.style.color = "green"
+        }
+        if(response.status === 409) {
+            checkResponseForAddJoke.textContent = "The joke is already in your collection";
+            checkResponseForAddJoke.style.color = "red"
+        }
         
 
     })
