@@ -3,6 +3,9 @@ let inputPassword = document.getElementById("login-password");
 let inputName = document.getElementById("login-name");
 let errorMessage = document.getElementById("error-message");
 
+let loginSection = document.getElementById("login-section");
+let dashboredSection = document.getElementById("dashbored-section");
+
 
 loginButton.addEventListener("click", function () {
     let inputNa = inputName.value;
@@ -15,11 +18,9 @@ loginButton.addEventListener("click", function () {
     fetch(request).then(fulfill)
 
     async function fulfill(response) {
-        let resource = await response.json();
-        console.log(resource)
         if (response.status === 200) {
-            errorMessage.innerHTML = `${resource.name}`;
-            errorMessage.style.color = "lightgreen";
+            let resource = await response.json();
+            loadDashbored(resource);
         }
         if (response.status === 400) {
             errorMessage.textContent = "Missing username or password";
@@ -31,5 +32,13 @@ loginButton.addEventListener("click", function () {
         }
 
     }
-
 })
+
+async function loadDashbored(user) {
+    loginSection.style.display = "none";
+    dashboredSection.style.display = "flex";
+    const usernameDisplay = document.getElementById("username-display");
+    usernameDisplay.textContent = `${user.name}`;
+    const welcomeText = document.getElementById("welcome-text");
+    welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
+}
