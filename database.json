@@ -6,13 +6,15 @@
       "We’re renovating the house, and the first floor is going great, but the second floor is another story.",
       "A guy walked into a bar, and lost the limbo contest."
     ],
-    "img": ""
+    "img": "https://www.moln1.se/wp-content/uploads/2023/08/Gustaf_E_Moln1_2.jpg"
   },
   {
     "name": "testt",
     "password": "123",
-    "favoriteJokes": [],
-    "img": ""
+    "favoriteJokes": [
+      "Have you heard about the new corduroy pillows — they're making headlines!"
+    ],
+    "img": "https://idservice.mau.se/Photos/ah5479.jpg?w=120&h=74&mode=crop"
   },
   {
     "name": "testtt",
@@ -75,7 +77,9 @@
       "I was wondering why the baseball kept getting bigger and bigger. Then it hit me.",
       "What’s the best air to breathe if you want to be rich? Millionaire.",
       "Did you hear about the king that went to the dentist? He needed to get crowns.",
-      "I have a joke about kites, but it would just sail over your head."
+      "I have a joke about kites, but it would just sail over your head.",
+      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
+      "My therapist told me I have problems expressing my emotions. Can’t say I’m surprised."
     ],
     "img": "https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
