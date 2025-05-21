@@ -1,6 +1,6 @@
 import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
-
+import { classForCheckPassword } from "./classForCheckPassword.js"
 async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
@@ -49,6 +49,15 @@ async function handler(request) {
     if (url.pathname === "/create") {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
+            let classForCheckPasswordAnswer = classForCheckPassword(resource) // true eller false
+            console.log(classForCheckPasswordAnswer)
+            if(!classForCheckPasswordAnswer) { 
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement" }), {
+                    status: 422,
+                    headers: headersCors
+                });
+                return response;
+            }
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,

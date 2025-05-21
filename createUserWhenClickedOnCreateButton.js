@@ -27,6 +27,10 @@ createButton.addEventListener("click", function(){
             confirmTheAccount.textContent = "User already exist with that name";
             confirmTheAccount.style.color = "red";
         }
+        if(response.status === 422) {
+            confirmTheAccount.textContent = "The password does not meet the requirement, must be 3 charchter or more. ";
+            confirmTheAccount.style.color = "red";
+        }
     }
     function rejectHandler(error) {
         confirmTheAccount.textContent = "Network error";

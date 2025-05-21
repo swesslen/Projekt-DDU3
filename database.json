@@ -12,7 +12,9 @@
     "name": "testt",
     "password": "123",
     "favoriteJokes": [
-      "Have you heard about the new corduroy pillows — they're making headlines!"
+      "Have you heard about the new corduroy pillows — they're making headlines!",
+      "Where do armies belong? In your sleeves.",
+      "Mom says I have no sense of direction, so I packed my bags and right."
     ],
     "img": "https://idservice.mau.se/Photos/ah5479.jpg?w=120&h=74&mode=crop"
   },
@@ -82,5 +84,17 @@
       "My therapist told me I have problems expressing my emotions. Can’t say I’m surprised."
     ],
     "img": "https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "testest",
+    "password": "1234",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "testestr",
+    "password": "q234",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/459335/pexels-photo-459335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
