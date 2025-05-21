@@ -2,7 +2,10 @@
   {
     "name": "test",
     "password": "123",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      "We’re renovating the house, and the first floor is going great, but the second floor is another story.",
+      "A guy walked into a bar, and lost the limbo contest."
+    ],
     "img": ""
   },
   {

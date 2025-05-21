@@ -1,5 +1,5 @@
 import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
-
+import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
 
 async function handler(request) {
     let url = new URL(request.url);
@@ -10,7 +10,7 @@ async function handler(request) {
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json")
     headersCors.set("access-control-allow-origin", "*");
-    headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
+    headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH");
     headersCors.set("Access-Control-Allow-Headers", "Content-Type");
 
     if (request.method === "OPTIONS") {
@@ -18,6 +18,24 @@ async function handler(request) {
             status: 204,
             headers: headersCors
         });
+    }
+    if(url.pathname === "/login/dashboard") {
+        if(request.method === "PATCH") {
+            console.log("we in patch")
+            let resource = await request.json()
+            console.log(resource)
+            for(let user of jsonData) {
+                if(user.name === resource.name) {
+                    addFavoriteJokeToToUsersKey(resource.name, resource.joke)
+                    let response = new Response(JSON.stringify({message: "The joke was added successfully"}), {
+                        status: 200,
+                        headers: headersCors
+                    })
+                    return response
+                }
+            }
+
+        }
     }
 
     if (url.pathname === "/create") {
@@ -72,6 +90,7 @@ async function handler(request) {
             }
         }
     }
+    
 }
 
 Deno.serve(handler);
