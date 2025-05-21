@@ -46,5 +46,11 @@
     "password": "1",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "profiltest",
+    "password": "1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1420440/pexels-photo-1420440.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

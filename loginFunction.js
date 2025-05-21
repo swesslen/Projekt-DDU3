@@ -45,18 +45,22 @@ async function loadDashbored(user) {
     usernameDisplay.textContent = `${user.name}`;
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
-    generateJokeButton.addEventListener("click", async function(){ 
-        let newJoke = await getJoke(); 
+    const profilePicture = document.getElementById("profile-picture");
+    profilePicture.style.background = `url(${user.img})`;
+    profilePicture.style.backgroundSize = "cover";
+    profilePicture.style.backgroundPosition = "center";
+    generateJokeButton.addEventListener("click", async function () {
+        let newJoke = await getJoke();
         testTextJoke.textContent = newJoke[0].joke;
     })
-    
+
 
 }
 
 
 async function getJoke() {
     let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
-        headers: {"X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9"}
+        headers: { "X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9" }
     })
     let response = await fetch(request)
     return await response.json();
