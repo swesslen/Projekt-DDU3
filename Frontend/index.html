@@ -10,50 +10,66 @@
 <body>
     <section id="login">
         <main id="login-main">
+
             <div class="login-container">
                 <h1>Dashbored</h1>
+
                 <p class="input-description">Username:</p>
                 <input type="text" id="login-name">
+
                 <p class="input-description">Password:</p>
                 <input type="password" id="login-password">
+
                 <p>No account? <a href="createAccount.html">Create one here.</a></p>
+
                 <button class="login-button" id="login-button">Login</button>
             </div>
+
         </main>
     </section>
 
     <section id="create-account">
         <main id="create-account-main">
+
             <div class="login-container">
                 <h1>Dashbored</h1>
+                
                 <p class="input-description">Username:</p>
                 <input type="text" id="login-name">
+
                 <p class="input-description">Password:</p>
                 <input type="password" id="login-password">
+
                 <p class="input-description">Confirm Password:</p>
                 <input type="password" id="confirm-login-password">
+
                 <button class="login-button" id="create-account-button">Create Account</button>
                 <p>Done here? <a href="login.html">Back to Login</a></p>
             </div>
+
         </main>
     </section>
 
     <section id="dashbored">
         <main id="dashbored-main">
+
             <div id="left">
                 <div id="pfp"></div>
                 <p>${username}</p>
                 <button id="collection-button" class="button">My Collection</button>
             </div>
+
             <div id="up">
                 <h2>Welcome to your Dashbored ${username}!</h2>
                 <p>Want to hear a bad joke or get a random fact?</p>
                 <button id="joke-button" class="button">Generate Joke</button>
             </div>
+
             <div id="down">
                 <p>${skämt}</p>
                 <button id="add-button" class="button">Add to Collection</button>
             </div>
+
         </main>
     </section>
     <script src="login.js"></script>
