@@ -21,9 +21,7 @@ async function handler(request) {
     }
     if(url.pathname === "/login/dashboard") {
         if(request.method === "PATCH") {
-            console.log("we in patch")
             let resource = await request.json()
-            console.log(resource)
             for(let user of jsonData) {
                 if(user.name === resource.name) {
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
