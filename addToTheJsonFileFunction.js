@@ -26,6 +26,5 @@ async function getRandomImage() {
 
     const photoResource = await response.json();
     const photoUrl = photoResource.photos[0].src.large;
-    console.log(photoUrl);
     return photoUrl;
 }
