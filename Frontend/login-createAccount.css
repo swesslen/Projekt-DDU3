@@ -67,12 +67,58 @@ input {
     color: white;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #FC814A;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    font-weight: bold;
+}
+
+.button:hover {
+    color: azure;
+    font-size: 18px;
+}
+
+.button:active {
+    font-size: 14px;
+}
+
 .profile-section,
 #welcome-section,
+#joke-section,
 #collection-header {
     background-color: #1C2541;
     border-radius: 20px;
     padding: 30px;
+}
+
+#dashbored-section main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 35vh 35vh;
+    gap: 20px;
+    padding: 50px 70px;
+    font-size: 20px;
+    height: 80vh;
+}
+
+.profile-section {
+    grid-area: 1 / 1 / 3 / 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 100px 100px;
+    height: fit-content;
 }
 
 .profile-picture {
@@ -80,4 +126,38 @@ input {
     height: 200px;
     border-radius: 50%;
     background-color: green;
+    justify-self: center;
+    align-self: center;
+}
+
+#my-collection {
+    justify-self: center;
+    align-self: baseline;
+}
+
+#welcome-section {
+    grid-area: 1 / 2 / 2 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#joke-section {
+    grid-area: 2 / 2 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#joke-section .button,
+#joke-section p {
+    align-self: center;
+    justify-self: center;
+}
+
+#welcome-section .button, 
+#welcome-section h2, 
+#welcome-section p {
+    align-self: center;
+    justify-self: center;
 }
