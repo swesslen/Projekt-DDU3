@@ -111,7 +111,7 @@ input {
 
 #dashbored-section main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 300px 300px 300px;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     padding: 0px 150px 0px 150px;
@@ -154,7 +154,8 @@ input {
     grid-area: 2 / 2 / 3 / 4;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    max-width: 600px;
 }
 
 #joke-section .button,
