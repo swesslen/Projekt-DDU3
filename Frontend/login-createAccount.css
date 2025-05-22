@@ -175,6 +175,7 @@ input {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: 1fr 1fr;
     gap: 20px;
+    font-size: 20px;
     padding: 0px 150px 0px 150px;
 }
 
