@@ -4,6 +4,10 @@ body {
     color: azure;
 }
 
+section {
+    margin-left: 10%;
+}
+
 #login-section {
     display: block;
 }
@@ -130,10 +134,12 @@ input {
     align-self: center;
 }
 
-#my-collection {
-    justify-self: center;
+.profile-section .button {
     align-self: baseline;
+    justify-self: center;
 }
+
+
 
 #welcome-section {
     grid-area: 1 / 2 / 2 / 4;
@@ -160,4 +166,33 @@ input {
 #welcome-section p {
     align-self: center;
     justify-self: center;
+}
+
+#collection-section main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr;
+    gap: 20px;
+}
+
+#collection-header {
+    grid-area: 1 / 2 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+#collection-header h2 {
+    align-self: center;
+    justify-self: center;
+}
+
+#joke-collection {
+    justify-self: center;
+    align-self: center;
+    overflow-y: scroll;
+    border: 3px solid #FC814A;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
 }
