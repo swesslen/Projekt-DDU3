@@ -114,7 +114,7 @@ input {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 35vh 35vh;
     gap: 20px;
-    padding: 50px 70px;
+    padding: 50px;
     font-size: 20px;
     height: 80vh;
 }
