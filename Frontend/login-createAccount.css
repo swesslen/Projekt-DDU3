@@ -136,6 +136,11 @@ input {
     align-self: center;
 }
 
+.profile-section p {
+    justify-self: center;
+    align-self: center;
+}
+
 .profile-section .button {
     align-self: baseline;
     justify-self: center;
