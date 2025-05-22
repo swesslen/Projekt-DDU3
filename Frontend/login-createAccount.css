@@ -4,6 +4,11 @@ body {
     color: azure;
 }
 
+section {
+    margin-top: 50px;
+    margin: 50px 20px 0 20px;
+}
+
 #login-section {
     display: block;
 }
@@ -88,6 +93,7 @@ input {
 .button:hover {
     color: azure;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .button:active {
@@ -105,10 +111,10 @@ input {
 
 #dashbored-section main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 35vh 35vh;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
-    padding: 50px 70px;
+    padding: 0px 150px 0px 150px;
     font-size: 20px;
     height: 80vh;
 }
@@ -130,10 +136,12 @@ input {
     align-self: center;
 }
 
-#my-collection {
-    justify-self: center;
+.profile-section .button {
     align-self: baseline;
+    justify-self: center;
 }
+
+
 
 #welcome-section {
     grid-area: 1 / 2 / 2 / 4;
@@ -146,7 +154,8 @@ input {
     grid-area: 2 / 2 / 3 / 4;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    max-width: 600px;
 }
 
 #joke-section .button,
@@ -160,5 +169,38 @@ input {
 #welcome-section p {
     align-self: center;
     justify-self: center;
+}
+
+
+
+#collection-section main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1fr 1fr;
+    gap: 20px;
+    font-size: 20px;
+    padding: 0px 150px 0px 150px;
+}
+
+#collection-header {
+    grid-area: 1 / 2 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+#collection-header h2 {
+    align-self: center;
+    justify-self: center;
+}
+
+#joke-collection {
+    justify-self: center;
+    align-self: center;
+    overflow-y: scroll;
+    border: 3px solid #FC814A;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
 }
 
