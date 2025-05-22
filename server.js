@@ -102,6 +102,12 @@ async function handler(request) {
                     headers: headersCors
                 });
                 return response;
+            } else {
+                let response = new Response(JSON.stringify({message: "Incorret username or password"}), {
+                    status: 401,
+                    headers: headersCors
+                });
+                return response;
             }
         }
     }
