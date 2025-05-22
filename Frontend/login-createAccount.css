@@ -6,7 +6,7 @@ body {
 
 section {
     margin-top: 50px;
-    margin-left: 10%;
+    margin: 50px 20px 0 20px;
 }
 
 #login-section {
@@ -112,9 +112,9 @@ input {
 #dashbored-section main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 35vh 35vh;
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
-    padding: 50px;
+    padding: 0px 150px 0px 150px;
     font-size: 20px;
     height: 80vh;
 }
@@ -155,8 +155,6 @@ input {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    width: 500px;
-    max-width: 500px;
 }
 
 #joke-section .button,
@@ -177,6 +175,7 @@ input {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row: 1fr 1fr;
     gap: 20px;
+    padding: 0px 150px 0px 150px;
 }
 
 #collection-header {
