@@ -157,9 +157,7 @@ input {
 
 #joke-section {
     grid-area: 2 / 2 / 3 / 4;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 1fr;
+    display: none;
     max-width: 600px;
 }
 

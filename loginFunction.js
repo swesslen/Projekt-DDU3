@@ -14,7 +14,9 @@ let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
 let testButton = document.getElementById("testButton");
-let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke")
+let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke");
+
+let jokeSection = document.getElementById("joke-section");
 
 
 
@@ -94,6 +96,9 @@ async function loadDashbored(user) {
     generateJokeButton.addEventListener("click", async function () {
         let newJoke = await getJoke();
         testTextJoke.textContent = newJoke[0].joke;
+        jokeSection.style.display = "grid";
+        jokeSection.style.gridTemplateColumns = "1fr";
+        jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
     })
 }
 
