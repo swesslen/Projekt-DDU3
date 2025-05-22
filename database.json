@@ -124,5 +124,11 @@
     "password": "ssssssN2",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/1232594/pexels-photo-1232594.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "simon",
+    "password": "JallaaJallaaKebab123",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
