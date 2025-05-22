@@ -9,43 +9,56 @@
 </head>
 
 <body>
-    <main id="login-section">
-        <div class="login-container">
-            <h1>Dashbored</h1>
-            <p class="input-description">Username:</p>
-            <input type="text" id="login-name">
-            <p class="input-description">Password:</p>
-            <input type="password" id="login-password">
-            <p>No account? <a href="createAccount.html">Create one here.</a></p>
-            <p id="error-message"></p>
-            <button class="login-button" id="login-button">Login</button>
-        </div>
-    </main>
-    <main id="dashbored-section">
-        <div class="profile-section">
-            <div class="profile-picture"></div>
-            <p class="username-display"></p>
-            <button id="my-collection">My Collection</button>
-        </div>
-        <div id="welcome-section">
-            <h2 id="welcome-text"></h2>
-            <p>Want to hear a bad joke?</p>
-            <button id="generate-joke">Generate Joke</button>
-            <p id="test-text-joke"></p>
-            <button id="testButton">Add to collection</button>
-            <p id="checkResponseForAddJoke"></p>
-        </div>
-    </main>
-    <main id="collection-section">
-        <div class="profile-section">
-            <div class="profile-picture"></div>
-            <p class="username-display"></p>
-            <button id="back-to-start">Back to start</button>
-        </div>
-        <div id="collection-header">
-            <h2>Your Collection</h2>
-        </div>
-    </main>
+    <section id="login-section">
+        <main>
+            <div class="login-container">
+                <h1>Dashbored</h1>
+                <p class="input-description">Username:</p>
+                <input type="text" id="login-name">
+                <p class="input-description">Password:</p>
+                <input type="password" id="login-password">
+                <p>No account? <a href="createAccount.html">Create one here.</a></p>
+                <p id="error-message"></p>
+                <button class="login-button" id="login-button">Login</button>
+            </div>
+        </main>
+    </section>
+
+    <section id="dashbored-section">
+        <main>
+            <div class="profile-section">
+                <div class="profile-picture"></div>
+                <p class="username-display"></p>
+                <button class="button" id="my-collection">My Collection</button>
+            </div>
+
+            <div id="welcome-section">
+                <h2 id="welcome-text"></h2>
+                <p>Want to hear a bad joke?</p>
+                <button class="button" id="generate-joke">Generate Joke</button>
+            </div>
+            <div id="joke-section">
+                <p id="test-text-joke"></p>
+                <button class="button" id="testButton">Add to collection</button>
+                <p id="checkResponseForAddJoke"></p>
+            </div>
+
+        </main>
+    </section>
+
+    <section id="collection-section">
+        <main>
+            <div class="profile-section">
+                <div class="profile-picture"></div>
+                <p class="username-display"></p>
+                <button class="button" id="back-to-start">Back to start</button>
+            </div>
+            <div id="collection-header">
+                <h2>Your Collection</h2>
+            </div>
+        </main>
+    </section>
+
     <script src="../loginFunction.js"></script>
 </body>
 
