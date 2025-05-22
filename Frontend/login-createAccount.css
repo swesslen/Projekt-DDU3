@@ -136,6 +136,11 @@ input {
     align-self: center;
 }
 
+.profile-section p {
+    justify-self: center;
+    align-self: center;
+}
+
 .profile-section .button {
     align-self: baseline;
     justify-self: center;
@@ -175,7 +180,7 @@ input {
 
 #collection-section main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 300px 300px 300px;
     grid-row: 1fr 1fr;
     gap: 20px;
     font-size: 20px;
