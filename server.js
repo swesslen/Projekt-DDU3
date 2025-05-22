@@ -9,7 +9,7 @@ async function handler(request) {
 
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json")
-    headersCors.set("Access-control-Allow-Origin", "*");
+    headersCors.set("Access-Control-Allow-Origin", "*");
     headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH");
     headersCors.set("Access-Control-Allow-Headers", "Content-Type");
 
