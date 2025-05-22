@@ -17,6 +17,7 @@ let testButton = document.getElementById("testButton");
 let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke")
 
 
+
 loginButton.addEventListener("click", function () {
     let inputNa = inputName.value;
     let inputPass = inputPassword.value;
@@ -36,10 +37,11 @@ loginButton.addEventListener("click", function () {
             errorMessage.textContent = "Missing username or password";
             errorMessage.style.color = "red";
         }
-        if (response.status === 409) {
-            confirmTheAccount.textContent = "User already exist with that name";
-            confirmTheAccount.style.color = "red";
+        if (response.status === 401) {
+            errorMessage.textContent = "Incorret username or password";
+            errorMessage.style.color = "red";
         }
+        
 
     }
 })
@@ -77,6 +79,11 @@ async function loadDashbored(user) {
         
 
     })
+    collectionButton.addEventListener("click", function () {
+        dashboredSection.style.display = "none";
+        collectionSection.style.display = "flex";
+
+    })
     
 
     document.querySelectorAll(".profile-picture").forEach(profilePicture => {
@@ -90,10 +97,7 @@ async function loadDashbored(user) {
     })
 }
 
-collectionButton.addEventListener("click", function () {
-    dashboredSection.style.display = "none";
-    collectionSection.style.display = "flex";
-})
+
 
 async function getJoke() {
     let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
