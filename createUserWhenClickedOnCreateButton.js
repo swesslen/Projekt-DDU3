@@ -28,7 +28,7 @@ createButton.addEventListener("click", function(){
             confirmTheAccount.style.color = "red";
         }
         if(response.status === 422) {
-            confirmTheAccount.textContent = "The password does not meet the requirement, must be 3 charchter or more. ";
+            confirmTheAccount.textContent = "The password does not meet the requirement, name must be least 3 letter and password least 4 letter and includes one big letter and one number ";
             confirmTheAccount.style.color = "red";
         }
     }
