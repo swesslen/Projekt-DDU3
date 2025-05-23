@@ -13,7 +13,7 @@ let testTextJoke = document.getElementById("test-text-joke");
 let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
-let testButton = document.getElementById("testButton");
+let AddToCollectionButton = document.getElementById("testButton");
 let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke");
 
 let jokeSection = document.getElementById("joke-section");
@@ -63,7 +63,7 @@ async function loadDashbored(user) {
         joke = newJoke[0].joke;
         testTextJoke.textContent = newJoke[0].joke;
     })
-    testButton.addEventListener("click", async function() { // KNAPP ID
+    AddToCollectionButton.addEventListener("click", async function() { // KNAPP ID
         let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({name: user.name, joke: joke}),
@@ -78,7 +78,6 @@ async function loadDashbored(user) {
             checkResponseForAddJoke.textContent = "The joke is already in your collection";
             checkResponseForAddJoke.style.color = "red"
         }
-        
 
     })
     collectionButton.addEventListener("click", function () {
