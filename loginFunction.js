@@ -43,7 +43,7 @@ loginButton.addEventListener("click", function () {
             errorMessage.textContent = "Incorret username or password";
             errorMessage.style.color = "red";
         }
-        
+
 
     }
 })
@@ -58,26 +58,30 @@ async function loadDashbored(user) {
     const welcomeText = document.getElementById("welcome-text");
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
     let joke = null;
-    generateJokeButton.addEventListener("click", async function(){ 
-        let newJoke = await getJoke(); 
+    generateJokeButton.addEventListener("click", async function () {
+        let newJoke = await getJoke();
         joke = newJoke[0].joke;
         testTextJoke.textContent = newJoke[0].joke;
+        jokeSection.style.display = "grid";
+        jokeSection.style.gridTemplateColumns = "1fr";
+        jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
     })
     AddToCollectionButton.addEventListener("click", async function() { // KNAPP ID
         let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
-            body: JSON.stringify({name: user.name, joke: joke}),
-            headers: {"Content-Type" : "application/json"}
+            body: JSON.stringify({ name: user.name, joke: joke }),
+            headers: { "Content-Type": "application/json" }
         })
         let response = await fetch(request);
-        if(response.status === 200) {
+        if (response.status === 200) {
             checkResponseForAddJoke.textContent = "The joke was added successfully";
             checkResponseForAddJoke.style.color = "green"
         }
-        if(response.status === 409) {
+        if (response.status === 409) {
             checkResponseForAddJoke.textContent = "The joke is already in your collection";
             checkResponseForAddJoke.style.color = "red"
         }
+
 
     })
     collectionButton.addEventListener("click", function () {
@@ -85,20 +89,13 @@ async function loadDashbored(user) {
         collectionSection.style.display = "flex";
 
     })
-    
+
 
     document.querySelectorAll(".profile-picture").forEach(profilePicture => {
         profilePicture.style.background = `url(${user.img})`;
         profilePicture.style.backgroundSize = "cover";
         profilePicture.style.backgroundPosition = "center";
     });
-    generateJokeButton.addEventListener("click", async function () {
-        let newJoke = await getJoke();
-        testTextJoke.textContent = newJoke[0].joke;
-        jokeSection.style.display = "grid";
-        jokeSection.style.gridTemplateColumns = "1fr";
-        jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
-    })
 }
 
 
@@ -115,5 +112,3 @@ backToStartButton.addEventListener("click", function () {
     collectionSection.style.display = "none";
     dashboredSection.style.display = "flex";
 })
-
-
