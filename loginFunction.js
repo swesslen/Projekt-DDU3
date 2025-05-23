@@ -23,7 +23,7 @@ let jokeSection = document.getElementById("joke-section");
 loginButton.addEventListener("click", function () {
     let inputNa = inputName.value;
     let inputPass = inputPassword.value;
-    let request = new Request(`http://0.0.0.0:8000/login`, {
+    let request = new Request(`http://localhost:8000/login`, {
         method: "POST",
         body: JSON.stringify({ name: inputNa, password: inputPass }),
         headers: { "Content-Type": "application/json" }
