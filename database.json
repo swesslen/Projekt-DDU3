@@ -144,22 +144,5 @@
       "Can anyone tell me what oblivious means, because I have no idea."
     ],
     "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "testone",
-    "password": "Hej12",
-    "favoriteJokes": [
-      "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
-      "I'm reading an anti-gravity book, and I just can't put it down!"
-    ],
-    "img": "https://images.pexels.com/photos/287229/pexels-photo-287229.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "erik",
-    "password": "Erik1",
-    "favoriteJokes": [
-      "Have you heard about the new corduroy pillows — they're making headlines!"
-    ],
-    "img": "https://images.pexels.com/photos/57416/cat-sweet-kitty-animals-57416.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
