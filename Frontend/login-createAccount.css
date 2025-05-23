@@ -167,6 +167,10 @@ input {
     justify-self: center;
 }
 
+#joke-section p {
+    line-height: 40px;
+}
+
 #welcome-section .button, 
 #welcome-section h2, 
 #welcome-section p {
