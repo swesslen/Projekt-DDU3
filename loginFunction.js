@@ -64,7 +64,7 @@ async function loadDashbored(user) {
         testTextJoke.textContent = newJoke[0].joke;
     })
     testButton.addEventListener("click", async function() { // KNAPP ID
-        let request = new Request("http://0.0.0.0:8000/login/dashboard", {
+        let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({name: user.name, joke: joke}),
             headers: {"Content-Type" : "application/json"}
