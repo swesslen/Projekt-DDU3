@@ -13,7 +13,7 @@ let testTextJoke = document.getElementById("test-text-joke");
 let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
-let testButton = document.getElementById("testButton");
+let AddToCollectionButton = document.getElementById("testButton");
 let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke");
 
 let jokeSection = document.getElementById("joke-section");
@@ -66,7 +66,7 @@ async function loadDashbored(user) {
         jokeSection.style.gridTemplateColumns = "1fr";
         jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
     })
-    testButton.addEventListener("click", async function() { // KNAPP ID
+    AddToCollectionButton.addEventListener("click", async function() { // KNAPP ID
         let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({ name: user.name, joke: joke }),
