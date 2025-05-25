@@ -132,5 +132,11 @@
       "Can anyone tell me what oblivious means, because I have no idea."
     ],
     "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/167684/pexels-photo-167684.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

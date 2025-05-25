@@ -8,8 +8,8 @@ async function handler(request) {
     const jsonData = JSON.parse(jsonString)
 
     const headersCors = new Headers();
-    headersCors.set("Content-Type", "application/json")
-    headersCors.set("access-control-allow-origin", "*");
+    headersCors.set("Content-Type", "application/json");
+    headersCors.set("Access-Control-Allow-Origin", "*");
     headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH");
     headersCors.set("Access-Control-Allow-Headers", "Content-Type");
 
@@ -19,23 +19,23 @@ async function handler(request) {
             headers: headersCors
         });
     }
-    if(url.pathname === "/login/dashboard") {
-        if(request.method === "PATCH") {
+    if (url.pathname === "/login/dashboard") {
+        if (request.method === "PATCH") {
             let resource = await request.json()
-            for(let user of jsonData) {
-                if(user.name === resource.name) {
-                    for(let joke of user.favoriteJokes) {
-                        if(joke === resource.joke) {
-                            let response = new Response(JSON.stringify({message: "The joke is already in your collection"}), {
+            for (let user of jsonData) {
+                if (user.name === resource.name) {
+                    for (let joke of user.favoriteJokes) {
+                        if (joke === resource.joke) {
+                            let response = new Response(JSON.stringify({ message: "The joke is already in your collection" }), {
                                 status: 409,
                                 headers: headersCors
                             })
                             return response
-                            
+
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
-                    let response = new Response(JSON.stringify({message: "The joke was added successfully"}), {
+                    let response = new Response(JSON.stringify({ message: "The joke was added successfully" }), {
                         status: 200,
                         headers: headersCors
                     })
@@ -50,15 +50,15 @@ async function handler(request) {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
-            console.log(classForCheckPasswordAnswerAndName)
-            if(!classForCheckPasswordAnswerAndName) { 
+            if (!classForCheckPasswordAnswerAndName) {
                 let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
                     status: 422,
                     headers: headersCors
                 });
                 return response;
             }
-            if (resource.name == "" || resource.password == "") {
+            const missingNameOrPassword = !resource.name?.trim() && !resource.password?.trim();
+            if (missingNameOrPassword) {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
@@ -88,7 +88,8 @@ async function handler(request) {
 
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            if (resource.name == "" || resource.password == "") {
+            const hasNameAndPassword = resource.name && resource.password;
+            if (!hasNameAndPassword) {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
@@ -103,7 +104,7 @@ async function handler(request) {
                 });
                 return response;
             } else {
-                let response = new Response(JSON.stringify({message: "Incorret username or password"}), {
+                let response = new Response(JSON.stringify({ message: "Incorret username or password" }), {
                     status: 401,
                     headers: headersCors
                 });
@@ -111,7 +112,10 @@ async function handler(request) {
             }
         }
     }
-    
+    return new Response(JSON.stringify({ message: "Not found" }), {
+        status: 404,
+        headers: headersCors,
+    });
 }
 
 Deno.serve(handler);
