@@ -49,15 +49,7 @@ async function handler(request) {
     if (url.pathname === "/create") {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
-            if (!classForCheckPasswordAnswerAndName) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
-                    status: 422,
-                    headers: headersCors
-                });
-                return response;
-            }
-            const missingNameOrPassword = !resource.name?.trim() && !resource.password?.trim();
+            const missingNameOrPassword = !(resource.name.trim() && resource.password.trim());
             if (missingNameOrPassword) {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
@@ -74,6 +66,14 @@ async function handler(request) {
                     return response;
                 }
             }
+            let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
+            if (!classForCheckPasswordAnswerAndName) {
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
+                    status: 422,
+                    headers: headersCors
+                });
+                return response;
+            }
 
             addToTheJsonFileFunction(resource);
             let response = new Response(JSON.stringify({ message: "Account created successfully!" }), {
@@ -88,8 +88,8 @@ async function handler(request) {
 
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            const hasNameAndPassword = resource.name && resource.password;
-            if (!hasNameAndPassword) {
+            const missingNameOrPassword = !(resource.name.trim() && resource.password.trim());
+            if (missingNameOrPassword) {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
