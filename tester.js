@@ -4,8 +4,9 @@ const requestsArray = [];
 
 const urlCreate = new URL("http://localhost:8000/create");
 const urlLogin = new URL("http://localhost:8000/login");
+const urlLoginDashboard = new URL("http://localhost:8000/login/dashboard");
 
-//Pathway: "/create"
+//Endpoint: "/create"
 // Status: 200
 async function req1() {
     const body = {
@@ -29,7 +30,7 @@ async function req1() {
         console.error("Fel:", error);
     }
 };
-requestsArray.push(req1());
+requestsArray.push(req1);
 
 //status 400
 async function req2() {
@@ -54,7 +55,7 @@ async function req2() {
         console.error("Fel:", error);
     }
 }
-requestsArray.push(req2());
+requestsArray.push(req2);
 
 //Status 409
 async function req3() {
@@ -62,7 +63,6 @@ async function req3() {
         name: "test",
         password: "123"
     };
-
     try {
         const response = await fetch(urlCreate, {
             method: "POST",
@@ -80,7 +80,7 @@ async function req3() {
         console.error("Fel:", error);
     }
 }
-requestsArray.push(req3());
+requestsArray.push(req3);
 
 //Status 422
 async function req4() {
@@ -105,9 +105,9 @@ async function req4() {
         console.error("Fel:", error);
     }
 }
-requestsArray.push(req4());
+requestsArray.push(req4);
 
-//Pathway: "/login"
+//Endpoint: "/login"
 //Status 200
 async function req5() {
     const body = {
@@ -131,7 +131,7 @@ async function req5() {
         console.error("Fel:", error);
     }
 }
-requestsArray.push(req5());
+requestsArray.push(req5);
 
 //Status 400
 async function req6() {
@@ -156,15 +156,92 @@ async function req6() {
         console.error("Fel:", error);
     }
 }
-requestsArray.push(req6());
+requestsArray.push(req6);
+
+//Status 401
+async function req7() {
+    const body = {
+        name: "EnSvampISkogen",
+        password: "1SvampISkogen"
+    };
+    try {
+        const response = await fetch(urlLogin, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlLogin.pathname,
+            method: "POST",
+            expectedStatus: 401
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req7);
+
+//Endpoint: "/login/dashboard"
+//Status 200
+
+async function req8() {
+    const body = {
+        name: "test",
+        joke: "Varför gick fisken över vägen? Hitta nemo"
+    };
+    try {
+        const response = await fetch(urlLoginDashboard, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlLogin.pathname,
+            method: "PATCH",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req8);
+
+//Status 409
+async function req9() {
+    const body = {
+        name: "test",
+        joke: "A guy walked into a bar, and lost the limbo contest."
+    };
+    try {
+        const response = await fetch(urlLoginDashboard, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlLogin.pathname,
+            method: "PATCH",
+            expectedStatus: 409
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req9);
 
 async function fetchOneByOne() {
-    for (let request of requestsArray) {
+    for (let requestFunction of requestsArray) {
         const divInfo = document.createElement("div");
         const divStatus = document.createElement("div");
         const divMessage = document.createElement("div");
 
-        const responseArray = await request;
+        const responseArray = await requestFunction();
         const info = responseArray[0];
         const status = responseArray[1];
         const message = responseArray[2];

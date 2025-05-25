@@ -31,7 +31,6 @@ async function handler(request) {
                                 headers: headersCors
                             })
                             return response
-
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
@@ -42,7 +41,6 @@ async function handler(request) {
                     return response
                 }
             }
-
         }
     }
 
@@ -58,7 +56,7 @@ async function handler(request) {
                 return response;
             }
             for (let user of jsonData) {
-                if (user.name == resource.name) {
+                if (user.name === resource.name) {
                     let response = new Response(JSON.stringify({ message: "User already exist" }), {
                         status: 409,
                         headers: headersCors
@@ -68,7 +66,7 @@ async function handler(request) {
             }
             let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
             if (!classForCheckPasswordAnswerAndName) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement" }), {
                     status: 422,
                     headers: headersCors
                 });
