@@ -64,7 +64,20 @@
   {
     "name": "wow",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      {
+        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Mom texted me from the grocery store to say they’re out of pasta, and we’re penneless.",
+        "status": "favorite"
+      },
+      {
+        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "status": "favorite"
+      }
+    ],
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -177,6 +190,10 @@
     "name": "Elias22",
     "password": "HejHej22",
     "favoriteJokes": [
+      {
+        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
+        "status": "recieved"
+      },
       {
         "joke": "I want to name my puppies Rolex and Timex so I can have watch dogs.",
         "status": "favorite"

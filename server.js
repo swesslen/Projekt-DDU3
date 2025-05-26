@@ -33,6 +33,37 @@ async function handler(request) {
     }
 
     if (url.pathname === "/login/dashboard/collection") {
+        if (request.method === "POST") {
+            if (url.searchParams.has("username")) {
+                const name = url.searchParams.get("username");
+                const resource = await request.json();
+                console.log("Skämtet som skickas:", resource);
+
+                for (let user of jsonData) {
+                    if (user.name === name) {
+                        user.favoriteJokes.unshift(resource);
+
+                        await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
+
+                        const response = new Response(JSON.stringify("Joke was sent to user"), {
+                            status: 200,
+                            headers: headersCors
+                        });
+                        return response;
+                    }
+                }
+
+                return new Response(JSON.stringify("User not found"), {
+                    status: 404,
+                    headers: headersCors
+                });
+            }
+
+            return new Response(JSON.stringify("Missing ?username= in URL"), {
+                status: 400,
+                headers: headersCors
+            });
+        }
         if (request.method === "DELETE") {
             let resource = await request.json();
             console.log(resource)
