@@ -113,74 +113,94 @@ async function loadDashbored(user) {
         profilePicture.style.backgroundSize = "cover";
         profilePicture.style.backgroundPosition = "center";
     });
-}
 
 
-
-async function getJoke() {
-    let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
-        headers: { "X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9" }
+    async function getJoke() {
+        let request = new Request("https://api.api-ninjas.com/v1/dadjokes", {
+            headers: { "X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9" }
+        })
+        let response = await fetch(request)
+        let resource = await response.json();
+        let joke = resource[0];
+        joke.status = "favorite";
+        return joke;
+    }
+    backToStartButton.addEventListener("click", function () {
+        collectionSection.style.display = "none";
+        dashboredSection.style.display = "flex";
     })
-    let response = await fetch(request)
-    let resource = await response.json();
-    let joke = resource[0];
-    joke.status = "favorite";
-    return joke;
+
+    class RenderCollection {
+        constructor(jokeObject) {
+            this.joke = jokeObject.joke;
+            this.status = jokeObject.status;
+        }
+    
+        render() {
+            const jokeDiv = document.createElement("div");
+            jokeDiv.textContent = this.joke;
+            jokeDiv.style.padding = "10px";
+            jokeDiv.style.margin = "10px";
+            jokeDiv.style.borderRadius = "5px";
+    
+            // Anropa metod beroende på status
+            if (this.status === "favorite") {
+                this.styleFavorite(jokeDiv);
+            }
+    
+            if (this.status === "recieved") {
+                this.styleRecieved(jokeDiv);
+            }
+    
+            return jokeDiv;
+        }
+    
+        styleFavorite(jokeDiv) {
+            jokeDiv.style.backgroundColor = "red";
+    
+            let sendButton = document.createElement("button");
+            sendButton.textContent = "Send to friend";
+            jokeDiv.appendChild(sendButton);
+    
+            let removeButton = document.createElement("button");
+            removeButton.textContent = "Remove joke";
+            removeButton.addEventListener("click", async function(event) {
+                console.log("jnfjin")
+                const clickedButton = event.target; 
+                const parentDiv = clickedButton.parentElement; 
+                console.log(parentDiv.textContent)
+                let getJoke = parentDiv.textContent;
+                let request = new Request("http://localhost:8000/login/dashboard/collection", {
+                    method: "DELETE",
+                    body: JSON.stringify({name: user.name, joke: getJoke}),
+                    headers: {"Content-Type": "application/json"}
+                })
+                let response = await fetch(request);
+                if(response.status === 200) {
+                    console.log("Delete ok")
+                }
+            })
+            jokeDiv.appendChild(removeButton);
+        }
+    
+        styleRecieved(jokeDiv) {
+            jokeDiv.style.backgroundColor = "lightblue";
+            jokeDiv.style.color = "black";
+    
+            let acceptButton = document.createElement("button");
+            acceptButton.textContent = "Save joke";
+            jokeDiv.appendChild(acceptButton);
+    
+            let removeButton = document.createElement("button");
+            removeButton.textContent = "Remove joke";
+            jokeDiv.appendChild(removeButton);
+        }
+    
+    }
 }
 
-backToStartButton.addEventListener("click", function () {
-    collectionSection.style.display = "none";
-    dashboredSection.style.display = "flex";
-})
 
-class RenderCollection {
-    constructor(jokeObject) {
-        this.joke = jokeObject.joke;
-        this.status = jokeObject.status;
-    }
 
-    render() {
-        const jokeDiv = document.createElement("div");
-        jokeDiv.textContent = this.joke;
-        jokeDiv.style.padding = "10px";
-        jokeDiv.style.margin = "10px";
-        jokeDiv.style.borderRadius = "5px";
 
-        // Anropa metod beroende på status
-        if (this.status === "favorite") {
-            this.styleFavorite(jokeDiv);
-        }
 
-        if (this.status === "recieved") {
-            this.styleRecieved(jokeDiv);
-        }
 
-        return jokeDiv;
-    }
-
-    styleFavorite(jokeDiv) {
-        jokeDiv.style.backgroundColor = "red";
-
-        let sendButton = document.createElement("button");
-        sendButton.textContent = "Send to friend";
-        jokeDiv.appendChild(sendButton);
-
-        let removeButton = document.createElement("button");
-        removeButton.textContent = "Remove joke";
-        jokeDiv.appendChild(removeButton);
-    }
-
-    styleRecieved(jokeDiv) {
-        jokeDiv.style.backgroundColor = "lightblue";
-        jokeDiv.style.color = "black";
-
-        let acceptButton = document.createElement("button");
-        acceptButton.textContent = "Save joke";
-        jokeDiv.appendChild(acceptButton);
-
-        let removeButton = document.createElement("button");
-        removeButton.textContent = "Remove joke";
-        jokeDiv.appendChild(removeButton);
-    }
-
-}

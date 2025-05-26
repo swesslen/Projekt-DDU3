@@ -1,6 +1,7 @@
 import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
 import { classForCheckPasswordAndName } from "./classForCheckPasswordAndName.js"
+import { deleteDataFromJsonFile } from "./deleteDataFromJsonFile.js"
 async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
@@ -18,6 +19,21 @@ async function handler(request) {
             status: 204,
             headers: headersCors
         });
+    }
+    if(url.pathname === "/login/dashboard/collection") {
+        console.log("ojadnejn")
+        if(request.method === "DELETE") {
+            let resource = await request.json();
+            console.log(resource)
+            let didWeFindTheJoke = deleteDataFromJsonFile(resource);
+            if(didWeFindTheJoke === true) {
+                let response = new Response(JSON.stringify({message: "Delete "}), {
+                    status: 200,
+                    headers: headersCors
+                })
+                return response
+            }
+        }
     }
     if (url.pathname === "/login/dashboard") {
         if (request.method === "PATCH") {

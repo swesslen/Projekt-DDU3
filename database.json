@@ -218,5 +218,40 @@
       }
     ],
     "img": "https://images.pexels.com/photos/68507/spring-flowers-flowers-collage-floral-68507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "test123",
+    "password": "Hej123",
+    "favoriteJokes": [
+      {
+        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I wanted to eat a watch for lunch, but it was too time-consuming.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I have a joke about a broken clock, but it’s not the right time.",
+        "status": "favorite"
+      },
+      {
+        "joke": "To the person who stole my case of energy drinks: I bet you can't sleep at night.",
+        "status": "favorite"
+      },
+      {
+        "joke": "What did one plate say to another plate? Tonight, dinner's on me.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Mom asked me to put ketchup on the grocery list. Now I can't see anything.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I have a joke about a roof, but it would just go over your head.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/1157255/pexels-photo-1157255.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
