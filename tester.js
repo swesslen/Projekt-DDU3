@@ -7,6 +7,8 @@ const urlLogin = new URL("http://localhost:8000/login");
 const urlLoginDashboard = new URL("http://localhost:8000/login/dashboard");
 const urlGetUserJokes = new URL("http://localhost:8000/favoriteJokes/user?name=test");
 const urlSendJoke = new URL("http://localhost:8000/login/dashboard/collection?username=test");
+const urlSendJokeButFail = new URL("http://localhost:8000/login/dashboard/collection?username=korgkingen");
+const urlSendJokeNoName = new URL("http://localhost:8000/login/dashboard/collection");
 
 //Endpoint: "/create"
 // Status: 200
@@ -255,7 +257,7 @@ async function req10() {
 }
 requestsArray.push(req10);
 
-//Endpoint: "/login/dashboard/collection"
+//Endpoint: "/login/dashboard/collection" - Method: "POST"
 //Status 200
 async function req11() {
     const body = {
@@ -281,6 +283,58 @@ async function req11() {
 }
 requestsArray.push(req11);
 
+//Status 404
+async function req12() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJokeButFail, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeButFail.pathname,
+            method: "POST",
+            expectedStatus: 404
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req12);
+
+//Status 400
+async function req13() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJokeNoName, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeNoName.pathname,
+            method: "POST",
+            expectedStatus: 400
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req13);
+
+//Method - "DELETE"
+//Status 200
 
 async function fetchOneByOne() {
     for (let requestFunction of requestsArray) {
