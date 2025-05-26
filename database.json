@@ -208,5 +208,11 @@
       }
     ],
     "img": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1102912/pexels-photo-1102912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
