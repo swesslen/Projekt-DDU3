@@ -24,11 +24,8 @@ async function handler(request) {
     if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
         if (request.method === "GET") {
             const user = jsonData.find(user => user.name === url.searchParams.get("name"));
-
             const body = user.favoriteJokes;
-
-            const body = user?.favoriteJokes;
-
+            const body = user.favoriteJokes;
             return new Response(JSON.stringify({ message: body }), {
                 status: 200,
                 headers: headersCors
@@ -90,16 +87,6 @@ async function handler(request) {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
             console.log(classForCheckPasswordAnswerAndName)
-
-
-            if (!classForCheckPasswordAnswerAndName) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
-                    status: 422,
-                    headers: headersCors
-                });
-                return response;
-            }
-
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
