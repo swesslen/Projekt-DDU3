@@ -5,6 +5,8 @@ const requestsArray = [];
 const urlCreate = new URL("http://localhost:8000/create");
 const urlLogin = new URL("http://localhost:8000/login");
 const urlLoginDashboard = new URL("http://localhost:8000/login/dashboard");
+const urlGetUserJokes = new URL("http://localhost:8000/favoriteJokes/user?name=test");
+const urlSendJoke = new URL("http://localhost:8000/login/dashboard/collection?username=test");
 
 //Endpoint: "/create"
 // Status: 200
@@ -234,6 +236,51 @@ async function req9() {
     }
 }
 requestsArray.push(req9);
+
+//Endpoint: "/favouritJokes/user?name=${user.name}"
+//Status 200
+async function req10() {
+    try {
+        const response = await fetch(urlGetUserJokes);
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlGetUserJokes.pathname,
+            method: "GET",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req10);
+
+//Endpoint: "/login/dashboard/collection"
+//Status 200
+async function req11() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJoke, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJoke.pathname,
+            method: "POST",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req11);
+
 
 async function fetchOneByOne() {
     for (let requestFunction of requestsArray) {

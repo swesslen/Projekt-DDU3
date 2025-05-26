@@ -3,6 +3,10 @@
     "name": "test",
     "password": "123",
     "favoriteJokes": [
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
       "A magician was walking down the street — then he turned into a store.",
       "RIP, boiling water. You will be mist.",
       "I have a joke about hunting for fossils, but you probably wouldn’t dig it.",
