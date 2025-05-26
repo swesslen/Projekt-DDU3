@@ -6,7 +6,7 @@ async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
-    const jsonData = JSON.parse(jsonString)
+    const jsonData = JSON.parse(jsonString);
 
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json")
@@ -20,20 +20,32 @@ async function handler(request) {
             headers: headersCors
         });
     }
-    if(url.pathname === "/login/dashboard/collection") {
-        if(request.method === "DELETE") {
+
+    if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
+        if (request.method === "GET") {
+            const user = jsonData.find(user => user.name === url.searchParams.get("name"));
+            const body = user?.favoriteJokes;
+            return new Response(JSON.stringify({ message: body }), {
+                status: 200,
+                headers: headersCors
+            });
+        }
+    }
+
+    if (url.pathname === "/login/dashboard/collection") {
+        if (request.method === "DELETE") {
             let resource = await request.json();
             console.log(resource)
             let didWeFindTheJoke = await deleteDataFromJsonFile(resource);
             console.log(didWeFindTheJoke)
-            if(didWeFindTheJoke === true) {
-                let response = new Response(JSON.stringify({message: "Delete "}), {
+            if (didWeFindTheJoke === true) {
+                let response = new Response(JSON.stringify({ message: "Delete " }), {
                     status: 200,
                     headers: headersCors
                 })
                 return response
             } else {
-                let response = new Response(JSON.stringify({message: "Not found to delete "}), {
+                let response = new Response(JSON.stringify({ message: "Not found to delete " }), {
                     status: 404,
                     headers: headersCors
                 })
