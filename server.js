@@ -21,6 +21,22 @@ async function handler(request) {
         });
     }
     if(url.pathname === "/login/dashboard/collection") {
+        if (request.method === "POST") {
+            if (url.searchParams.has(username)) {
+                let resource = await request.json();
+                for (let user of jsonData) {
+                    if (user.name == username) {
+                        user.favoriteJokes.unshift(resource)
+                        let response = new Response(JSON.stringify("Joke was sent to user"), {
+                            status: 200,
+                            headers: headersCors
+                        })
+                        return response;
+                    }
+                }
+            }
+        }
+        
         if(request.method === "DELETE") {
             let resource = await request.json();
             console.log(resource)

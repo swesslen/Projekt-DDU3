@@ -157,11 +157,12 @@ async function loadDashbored(user) {
                 let userToRecieve = prompt("Who would you like to send this to?")
                 let sentJoke = {joke: this.joke, status: "recieved"}
 
-                const request = new Request(`http://localhost:8000/login/dashboard/collection?${userToRecieve}`, {
+                const request = new Request(`http://localhost:8000/login/dashboard/collection?username=${userToRecieve}`, {
                     method: "POST",
                     body: JSON.stringify(sentJoke),
                     headers: {"Content-Type": "application/json"}
                 })
+                fetch(request);
             })
             
     

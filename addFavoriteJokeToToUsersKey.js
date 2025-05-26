@@ -4,7 +4,7 @@ export async function addFavoriteJokeToToUsersKey(userName, joke) {
     const jsonData = JSON.parse(jsonString)
     for (let user of jsonData) {
         if (userName === user.name) {
-            user.favoriteJokes.push(joke)
+            user.favoriteJokes.unshift(joke)
         }
     }
     await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
