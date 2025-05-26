@@ -61,6 +61,7 @@ async function loadDashbored(user) {
     welcomeText.textContent = `Welcome to your Dashbored ${user.name}!`;
     let joke = null;
     generateJokeButton.addEventListener("click", async function () {
+        checkResponseForAddJoke.textContent = "";
         let newJoke = await getJoke();
         joke = newJoke;
         testTextJoke.textContent = newJoke.joke;
