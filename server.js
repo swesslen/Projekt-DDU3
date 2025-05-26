@@ -5,7 +5,7 @@ async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
-    const jsonData = JSON.parse(jsonString)
+    const jsonData = JSON.parse(jsonString);
 
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json");
@@ -21,7 +21,7 @@ async function handler(request) {
     }
     if (url.pathname === "/login/dashboard") {
         if (request.method === "PATCH") {
-            let resource = await request.json()
+            let resource = await request.json();
             for (let user of jsonData) {
                 if (user.name === resource.name) {
                     for (let joke of user.favoriteJokes) {
@@ -37,8 +37,8 @@ async function handler(request) {
                     let response = new Response(JSON.stringify({ message: "The joke was added successfully" }), {
                         status: 200,
                         headers: headersCors
-                    })
-                    return response
+                    });
+                    return response;
                 }
             }
         }
