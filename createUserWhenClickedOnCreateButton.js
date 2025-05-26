@@ -4,30 +4,30 @@ let inputName = document.getElementById("login-name")
 let confirmLoginPassword = document.getElementById("confirm-login-password");
 let confirmTheAccount = document.getElementById("confirmTheAccount");
 
-createButton.addEventListener("click", function(){
+createButton.addEventListener("click", function () {
     let inputNa = inputName.value;
     let inputPass = inputPassword.value;
-    let request = new Request(`http://0.0.0.0:8000/create`,{
+    let request = new Request(`http://localhost:8000/create`, {
         method: "POST",
-        body: JSON.stringify({name: inputNa, password: inputPass}),
-        headers: {"Content-Type": "application/json"}
+        body: JSON.stringify({ name: inputNa, password: inputPass }),
+        headers: { "Content-Type": "application/json" }
     })
     fetch(request).then(fulfill, rejectHandler)
 
     function fulfill(response) {
-        if(response.status === 200) {
+        if (response.status === 200) {
             confirmTheAccount.textContent = "Account was succefull created";
             confirmTheAccount.style.color = "lightgreen";
         }
-        if(response.status === 400) {
+        if (response.status === 400) {
             confirmTheAccount.textContent = "Missing username or password";
             confirmTheAccount.style.color = "red";
         }
-        if(response.status === 409) {
+        if (response.status === 409) {
             confirmTheAccount.textContent = "User already exist with that name";
             confirmTheAccount.style.color = "red";
         }
-        if(response.status === 422) {
+        if (response.status === 422) {
             confirmTheAccount.textContent = "The password does not meet the requirement, name must be least 3 letter and password least 4 letter and includes one big letter and one number ";
             confirmTheAccount.style.color = "red";
         }
@@ -36,5 +36,5 @@ createButton.addEventListener("click", function(){
         confirmTheAccount.textContent = "Network error";
         confirmTheAccount.style.color = "red";
     }
-    
+
 })
