@@ -1,6 +1,7 @@
 import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
 import { classForCheckPasswordAndName } from "./classForCheckPasswordAndName.js"
+import { deleteDataFromJsonFile } from "./deleteDataFromJsonFile.js"
 async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
@@ -8,7 +9,7 @@ async function handler(request) {
     const jsonData = JSON.parse(jsonString);
 
     const headersCors = new Headers();
-    headersCors.set("Content-Type", "application/json");
+    headersCors.set("Content-Type", "application/json")
     headersCors.set("Access-Control-Allow-Origin", "*");
     headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH");
     headersCors.set("Access-Control-Allow-Headers", "Content-Type");
@@ -19,9 +20,43 @@ async function handler(request) {
             headers: headersCors
         });
     }
+
+    if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
+        if (request.method === "GET") {
+            const user = jsonData.find(user => user.name === url.searchParams.get("name"));
+            const body = user.favoriteJokes;
+            return new Response(JSON.stringify({ message: body }), {
+                status: 200,
+                headers: headersCors
+            });
+        }
+    }
+
+    if (url.pathname === "/login/dashboard/collection") {
+        if (request.method === "DELETE") {
+            let resource = await request.json();
+            console.log(resource)
+            let didWeFindTheJoke = await deleteDataFromJsonFile(resource);
+            console.log(didWeFindTheJoke)
+            if (didWeFindTheJoke === true) {
+                let response = new Response(JSON.stringify({ message: "Delete " }), {
+                    status: 200,
+                    headers: headersCors
+                })
+                return response
+            } else {
+                let response = new Response(JSON.stringify({ message: "Not found to delete " }), {
+                    status: 404,
+                    headers: headersCors
+                })
+                return response
+
+            }
+        }
+    }
     if (url.pathname === "/login/dashboard") {
         if (request.method === "PATCH") {
-            let resource = await request.json();
+            let resource = await request.json()
             for (let user of jsonData) {
                 if (user.name === resource.name) {
                     for (let joke of user.favoriteJokes) {
@@ -31,24 +66,27 @@ async function handler(request) {
                                 headers: headersCors
                             })
                             return response
+
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
                     let response = new Response(JSON.stringify({ message: "The joke was added successfully" }), {
                         status: 200,
                         headers: headersCors
-                    });
-                    return response;
+                    })
+                    return response
                 }
             }
+
         }
     }
 
     if (url.pathname === "/create") {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            const missingNameOrPassword = !(resource.name.trim() && resource.password.trim());
-            if (missingNameOrPassword) {
+            let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
+            console.log(classForCheckPasswordAnswerAndName)
+            if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
@@ -56,7 +94,7 @@ async function handler(request) {
                 return response;
             }
             for (let user of jsonData) {
-                if (user.name === resource.name) {
+                if (user.name == resource.name) {
                     let response = new Response(JSON.stringify({ message: "User already exist" }), {
                         status: 409,
                         headers: headersCors
@@ -64,9 +102,8 @@ async function handler(request) {
                     return response;
                 }
             }
-            let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
             if (!classForCheckPasswordAnswerAndName) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement" }), {
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
                     status: 422,
                     headers: headersCors
                 });
@@ -86,8 +123,7 @@ async function handler(request) {
 
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            const missingNameOrPassword = !(resource.name.trim() && resource.password.trim());
-            if (missingNameOrPassword) {
+            if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
                     headers: headersCors
@@ -110,10 +146,7 @@ async function handler(request) {
             }
         }
     }
-    return new Response(JSON.stringify({ message: "Not found" }), {
-        status: 404,
-        headers: headersCors,
-    });
+
 }
 
 Deno.serve(handler);
