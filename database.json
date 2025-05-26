@@ -64,20 +64,7 @@
   {
     "name": "wow",
     "password": "1",
-    "favoriteJokes": [
-      {
-        "joke": "I used to run a dating service for chickens, but I was struggling to make hens meet.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I have a joke about butter, but I’m not going to spread it.",
-        "status": "favorite"
-      },
-      {
-        "joke": "To the person who stole my bed: I won't rest until I find you.",
-        "status": "favorite"
-      }
-    ],
+    "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
