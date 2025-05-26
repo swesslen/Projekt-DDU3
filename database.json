@@ -66,15 +66,7 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "I used to run a dating service for chickens, but I was struggling to make hens meet.",
-        "status": "favorite"
-      },
-      {
         "joke": "I have a joke about butter, but I’m not going to spread it.",
-        "status": "favorite"
-      },
-      {
-        "joke": "To the person who stole my bed: I won't rest until I find you.",
         "status": "favorite"
       }
     ],
@@ -181,10 +173,6 @@
       },
       {
         "joke": "What do you call a bear with no teeth? A gummy bear.",
-        "status": "favorite"
-      },
-      {
-        "joke": "RIP, boiling water. You will be mist.",
         "status": "favorite"
       }
     ],
