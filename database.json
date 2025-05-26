@@ -64,12 +64,15 @@
   {
     "name": "wow",
     "password": "1",
+
     "favoriteJokes": [
       {
         "joke": "I have a joke about butter, but I’m not going to spread it.",
         "status": "favorite"
       }
     ],
+    "favoriteJokes": [],
+
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
