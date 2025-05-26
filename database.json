@@ -175,5 +175,36 @@
       "Can anyone tell me what oblivious means, because I have no idea."
     ],
     "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "elias22",
+    "password": "Hej22",
+    "favoriteJokes": [
+      {
+        "joke": "Why can't the sailor learn the alphabet? Because he kept getting lost at C.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I was going to go on an expensive vacation with a classical pianist, but he was too baroque.",
+        "status": "favorite"
+      },
+      {
+        "joke": "A guy walked into a bar, and lost the limbo contest.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Mom is mad at me because she asked me to sync her phone, so I threw it in the ocean.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
+        "status": "favorite"
+      },
+      {
+        "joke": "It’s raining cats and dogs, so be careful not to step in a poodle.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/68507/spring-flowers-flowers-collage-floral-68507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
