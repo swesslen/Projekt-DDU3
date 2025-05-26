@@ -1,6 +1,7 @@
 import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
 import { classForCheckPasswordAndName } from "./classForCheckPasswordAndName.js"
+import { deleteDataFromJsonFile } from "./deleteDataFromJsonFile.js"
 async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
