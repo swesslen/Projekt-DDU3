@@ -91,7 +91,7 @@ async function handler(request) {
             for (let user of jsonData) {
                 if (user.name === resource.name) {
                     for (let joke of user.favoriteJokes) {
-                        if (joke.joke === resource.joke.joke) {
+                        if (joke === resource.joke.joke) {
                             let response = new Response(JSON.stringify({ message: "The joke is already in your collection" }), {
                                 status: 409,
                                 headers: headersCors
