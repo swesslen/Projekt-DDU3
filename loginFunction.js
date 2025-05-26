@@ -198,5 +198,4 @@ class RenderCollection {
 </svg>`;
         buttonDiv.appendChild(removeButton);
     }
-
 }
