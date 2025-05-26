@@ -190,6 +190,7 @@ input {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 3fr;
+    max-height: 500px;
 }
 
 #collection-header h2 {
@@ -204,6 +205,98 @@ input {
     border: 3px solid #FC814A;
     border-radius: 25px;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
 }
 
+.favorite {
+    background-color: #FC814A;
+    color: azure;
+}
+
+.recieved {
+    background-color: azure;
+    color: black;
+}
+
+.recieved,
+.favorite {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    line-height: 30px;
+}
+
+.buttonDiv {
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-template-rows: 40px;
+    width: 110px;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+svg {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.removeButton,
+.sendButton,
+.acceptButton {
+    justify-self: center;
+    align-self: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+
+.removeButton {
+    background-color: #ca6666;
+    border: 3px solid #7c2929;
+}
+
+.removeButton:hover {
+    background-color: #e07171;
+    width: 37px;
+    height: 37px;
+}
+
+.removeButton:active {
+    width: 33px;
+    height: 33px;
+}
+
+.sendButton {
+    background-color: #658dcc;
+    border: 3px solid #3a5b91;
+}
+
+.sendButton:hover {
+    background-color: #729ee4;
+    width: 37px;
+    height: 37px;
+}
+
+.sendButton:active {
+    width: 33px;
+    height: 33px;
+}
+
+.acceptButton {
+    background-color: #73ae73;
+    border: 3px solid #4e864e;
+}
+
+.acceptButton:hover {
+    background-color: #86ca86;
+    width: 37px;
+    height: 37px;
+}
+
+.acceptButton:active {
+    width: 33px;
+    height: 33px;
+}
