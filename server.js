@@ -20,6 +20,28 @@ async function handler(request) {
             headers: headersCors
         });
     }
+    if(url.pathname === "/login/dashboard/collection") {
+        if(request.method === "DELETE") {
+            let resource = await request.json();
+            console.log(resource)
+            let didWeFindTheJoke = await deleteDataFromJsonFile(resource);
+            console.log(didWeFindTheJoke)
+            if(didWeFindTheJoke === true) {
+                let response = new Response(JSON.stringify({message: "Delete "}), {
+                    status: 200,
+                    headers: headersCors
+                })
+                return response
+            } else {
+                let response = new Response(JSON.stringify({message: "Not found to delete "}), {
+                    status: 404,
+                    headers: headersCors
+                })
+                return response
+
+            }
+        }
+    }
     if (url.pathname === "/login/dashboard") {
         if (request.method === "PATCH") {
             let resource = await request.json()

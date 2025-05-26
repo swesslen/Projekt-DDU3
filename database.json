@@ -3,15 +3,6 @@
     "name": "test",
     "password": "123",
     "favoriteJokes": [
-      "We’re renovating the house, and the first floor is going great, but the second floor is another story.",
-      "A guy walked into a bar, and lost the limbo contest.",
-      "I have a joke about immortality, and it never gets old.",
-      "To the person who stole my case of energy drinks: I bet you can't sleep at night.",
-      "6:30 is my favorite time of day, hands down.",
-      "To the person who stole my glasses: I will find you. I have contacts.",
-      "What do you call a fish with no eyes? Fsh.",
-      "I used to be able to play piano by ear, but now I have to use my hands.",
-      "I’m friends with almost all the letters of the alphabet. I just don’t know Y.",
       "A magician was walking down the street — then he turned into a store.",
       "RIP, boiling water. You will be mist.",
       "I have a joke about hunting for fossils, but you probably wouldn’t dig it.",
@@ -75,35 +66,15 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "I failed my calculus exam because I was sitting in the middle of identical twins — I couldn’t differentiate between them.",
+        "joke": "I used to run a dating service for chickens, but I was struggling to make hens meet.",
         "status": "favorite"
       },
       {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "joke": "I have a joke about butter, but I’m not going to spread it.",
         "status": "favorite"
       },
       {
-        "joke": "I finally watched that documentary on clocks. It was about time.",
-        "status": "recieved"
-      },
-      {
-        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I have a joke about a broken clock, but it’s not the right time.",
-        "status": "favorite"
-      },
-      {
-        "joke": "To the person who stole my depression medication: I hope you're happy now.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
-        "status": "favorite"
-      },
-      {
-        "joke": "What do you call a cow with two legs? Lean beef.",
+        "joke": "To the person who stole my bed: I won't rest until I find you.",
         "status": "favorite"
       }
     ],
@@ -223,10 +194,6 @@
     "name": "Elias22",
     "password": "HejHej22",
     "favoriteJokes": [
-      {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
-        "status": "favorite"
-      },
       {
         "joke": "I want to name my puppies Rolex and Timex so I can have watch dogs.",
         "status": "favorite"
