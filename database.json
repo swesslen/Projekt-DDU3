@@ -64,18 +64,21 @@
   {
     "name": "wow",
     "password": "1",
-
     "favoriteJokes": [
-      {
-        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
-        "status": "favorite"
-      },
       {
         "joke": "What do you call a man wearing a rug on his head? Matt.",
         "status": "favorite"
       },
       {
-        "joke": "Time flies like an arrow. Fruit flies like a banana.",
+        "joke": "Where do armies belong? In your sleeves.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I finally watched that documentary on clocks. It was about time.",
+        "status": "favorite"
+      },
+      {
+        "joke": "To the person who stole my diary and then died: My thoughts are with your family.",
         "status": "favorite"
       }
     ],
