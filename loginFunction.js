@@ -156,6 +156,19 @@ async function loadDashbored(user) {
 
             buttonDiv.appendChild(sendButton);
 
+            sendButton.addEventListener("click", async () => {
+                let userToRecieve = prompt("Who would you like to send this to?");
+                let sentJoke = { joke: this.joke, status: "recieved" };
+
+                const request = new Request(`http://localhost:8000/login/dashboard/collection?username=${userToRecieve}`, {
+                    method: "POST",
+                    body: JSON.stringify(sentJoke),
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                await fetch(request);
+            });
+
             let removeButton = document.createElement("button");
             removeButton.setAttribute("class", "removeButton");
             removeButton.innerHTML = `<svg fill="#000000" width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
