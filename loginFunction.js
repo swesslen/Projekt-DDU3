@@ -162,7 +162,7 @@ async function loadDashbored(user) {
                     body: JSON.stringify(sentJoke),
                     headers: {"Content-Type": "application/json"}
                 })
-                fetch(request);
+                await fetch(request);
             })
             
     

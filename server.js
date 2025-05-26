@@ -23,9 +23,11 @@ async function handler(request) {
     if(url.pathname === "/login/dashboard/collection") {
         if (request.method === "POST") {
             if (url.searchParams.has(username)) {
+                const name = url.searchParams.get(username)
                 let resource = await request.json();
+                console.log(resource)
                 for (let user of jsonData) {
-                    if (user.name == username) {
+                    if (user.name == name) {
                         user.favoriteJokes.unshift(resource)
                         let response = new Response(JSON.stringify("Joke was sent to user"), {
                             status: 200,
