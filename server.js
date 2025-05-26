@@ -19,23 +19,23 @@ async function handler(request) {
             headers: headersCors
         });
     }
-    if(url.pathname === "/login/dashboard") {
-        if(request.method === "PATCH") {
+    if (url.pathname === "/login/dashboard") {
+        if (request.method === "PATCH") {
             let resource = await request.json()
-            for(let user of jsonData) {
-                if(user.name === resource.name) {
-                    for(let joke of user.favoriteJokes) {
-                        if(joke === resource.joke) {
-                            let response = new Response(JSON.stringify({message: "The joke is already in your collection"}), {
+            for (let user of jsonData) {
+                if (user.name === resource.name) {
+                    for (let joke of user.favoriteJokes) {
+                        if (joke.joke === resource.joke.joke) {
+                            let response = new Response(JSON.stringify({ message: "The joke is already in your collection" }), {
                                 status: 409,
                                 headers: headersCors
                             })
                             return response
-                            
+
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
-                    let response = new Response(JSON.stringify({message: "The joke was added successfully"}), {
+                    let response = new Response(JSON.stringify({ message: "The joke was added successfully" }), {
                         status: 200,
                         headers: headersCors
                     })
@@ -51,7 +51,7 @@ async function handler(request) {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
             console.log(classForCheckPasswordAnswerAndName)
-            if(!classForCheckPasswordAnswerAndName) { 
+            if (!classForCheckPasswordAnswerAndName) {
                 let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
                     status: 422,
                     headers: headersCors
@@ -103,7 +103,7 @@ async function handler(request) {
                 });
                 return response;
             } else {
-                let response = new Response(JSON.stringify({message: "Incorret username or password"}), {
+                let response = new Response(JSON.stringify({ message: "Incorret username or password" }), {
                     status: 401,
                     headers: headersCors
                 });
@@ -111,7 +111,7 @@ async function handler(request) {
             }
         }
     }
-    
+
 }
 
 Deno.serve(handler);
