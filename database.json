@@ -3,14 +3,6 @@
     "name": "test",
     "password": "123",
     "favoriteJokes": [
-      {
-        "joke": "Ett skämt",
-        "status": "recieved"
-      },
-      {
-        "joke": "Ett skämt",
-        "status": "recieved"
-      },
       "A magician was walking down the street — then he turned into a store.",
       "RIP, boiling water. You will be mist.",
       "I have a joke about hunting for fossils, but you probably wouldn’t dig it.",
@@ -21,10 +13,12 @@
       "Every night, I have hard time remembering something, but then it dawns on me.",
       "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
       "I have a joke about pizza, but it’s too cheesy.",
-      {
-        "joke": "I have a joke about being an electrician, but it’s too shocking.",
-        "status": "favorite"
-      },
+      "Varför gick fisken över vägen? Hitta nemo",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "Varför gick fisken över vägen? Hitta nemo",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "Varför gick fisken över vägen? Hitta nemo",
+      "A guy walked into a bar, and lost the limbo contest.",
       "Varför gick fisken över vägen? Hitta nemo",
       "A guy walked into a bar, and lost the limbo contest."
     ],

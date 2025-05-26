@@ -21,7 +21,7 @@ async function handler(request) {
         });
     }
 
-    if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
+    if (url.pathname.startsWith("/favoriteJokes/user") && url.searchParams.has("name")) {
         if (request.method === "GET") {
             const user = jsonData.find(user => user.name === url.searchParams.get("name"));
             const body = user.favoriteJokes;
@@ -97,7 +97,6 @@ async function handler(request) {
                                 headers: headersCors
                             })
                             return response
-
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)

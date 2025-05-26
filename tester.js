@@ -335,6 +335,29 @@ requestsArray.push(req13);
 
 //Method - "DELETE"
 //Status 200
+async function req14() {
+    const body = {
+        name: "test",
+        joke: "Ett Skämt"
+    };
+    try {
+        const response = await fetch(urlSendJokeNoName, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeNoName.pathname,
+            method: "DELETE",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req14);
 
 async function fetchOneByOne() {
     for (let requestFunction of requestsArray) {
