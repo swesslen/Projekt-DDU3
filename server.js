@@ -25,7 +25,6 @@ async function handler(request) {
         if (request.method === "GET") {
             const user = jsonData.find(user => user.name === url.searchParams.get("name"));
             const body = user.favoriteJokes;
-            const body = user.favoriteJokes;
             return new Response(JSON.stringify({ message: body }), {
                 status: 200,
                 headers: headersCors
