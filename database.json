@@ -218,5 +218,32 @@
       }
     ],
     "img": "https://images.pexels.com/photos/68507/spring-flowers-flowers-collage-floral-68507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Elias22",
+    "password": "HejHej22",
+    "favoriteJokes": [
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I want to name my puppies Rolex and Timex so I can have watch dogs.",
+        "status": "favorite"
+      },
+      {
+        "joke": "To the person who stole my place in line: I’m after you now.",
+        "status": "favorite"
+      },
+      {
+        "joke": "What’s the best air to breathe if you want to be rich? Millionaire.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
