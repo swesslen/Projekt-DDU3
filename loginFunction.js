@@ -18,6 +18,8 @@ let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke")
 
 let jokeSection = document.getElementById("joke-section");
 
+let jokeCollection = document.getElementById("joke-collection");
+
 
 
 loginButton.addEventListener("click", function () {
@@ -60,22 +62,31 @@ async function loadDashbored(user) {
     let joke = null;
     generateJokeButton.addEventListener("click", async function () {
         let newJoke = await getJoke();
-        joke = newJoke[0].joke;
-        testTextJoke.textContent = newJoke[0].joke;
+        joke = newJoke;
+        testTextJoke.textContent = newJoke.joke;
         jokeSection.style.display = "grid";
         jokeSection.style.gridTemplateColumns = "1fr";
         jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
     })
-    AddToCollectionButton.addEventListener("click", async function() { // KNAPP ID
+    AddToCollectionButton.addEventListener("click", async function () { // KNAPP ID
         let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({ name: user.name, joke: joke }),
             headers: { "Content-Type": "application/json" }
         })
         let response = await fetch(request);
+
         if (response.status === 200) {
             checkResponseForAddJoke.textContent = "The joke was added successfully";
-            checkResponseForAddJoke.style.color = "green"
+            checkResponseForAddJoke.style.color = "green";
+
+            // 🆕 Lägg till skämtet lokalt (om det inte redan finns)
+            const newJoke = { joke: joke.joke, status: "favorite" };
+            const exists = user.favoriteJokes.some(j => j.joke === joke);
+            if (!exists) {
+                user.favoriteJokes.push(newJoke);
+            }
+
         }
         if (response.status === 409) {
             checkResponseForAddJoke.textContent = "The joke is already in your collection";
@@ -87,7 +98,12 @@ async function loadDashbored(user) {
     collectionButton.addEventListener("click", function () {
         dashboredSection.style.display = "none";
         collectionSection.style.display = "flex";
-
+        jokeCollection.innerHTML = "";
+        for (let joke of user.favoriteJokes) {
+            const jokeComponent = new RenderCollection(joke);
+            const element = jokeComponent.render();
+            jokeCollection.appendChild(element);
+        }
     })
 
 
@@ -105,10 +121,65 @@ async function getJoke() {
         headers: { "X-Api-Key": "NPFGbTReNy3OJTogUtFxlw==xe4qs62lBkAY00X9" }
     })
     let response = await fetch(request)
-    return await response.json();
+    let resource = await response.json();
+    let joke = resource[0];
+    joke.status = "favorite";
+    return joke;
 }
 
 backToStartButton.addEventListener("click", function () {
     collectionSection.style.display = "none";
     dashboredSection.style.display = "flex";
 })
+
+class RenderCollection {
+    constructor(jokeObject) {
+        this.joke = jokeObject.joke;
+        this.status = jokeObject.status;
+    }
+
+    render() {
+        const jokeDiv = document.createElement("div");
+        jokeDiv.textContent = this.joke;
+        jokeDiv.style.padding = "10px";
+        jokeDiv.style.margin = "10px";
+        jokeDiv.style.borderRadius = "5px";
+
+        // Anropa metod beroende på status
+        if (this.status === "favorite") {
+            this.styleFavorite(jokeDiv);
+        }
+
+        if (this.status === "recieved") {
+            this.styleRecieved(jokeDiv);
+        }
+
+        return jokeDiv;
+    }
+
+    styleFavorite(jokeDiv) {
+        jokeDiv.style.backgroundColor = "red";
+
+        let sendButton = document.createElement("button");
+        sendButton.textContent = "Send to friend";
+        jokeDiv.appendChild(sendButton);
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove joke";
+        jokeDiv.appendChild(removeButton);
+    }
+
+    styleRecieved(jokeDiv) {
+        jokeDiv.style.backgroundColor = "lightblue";
+        jokeDiv.style.color = "black";
+
+        let acceptButton = document.createElement("button");
+        acceptButton.textContent = "Save joke";
+        jokeDiv.appendChild(acceptButton);
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove joke";
+        jokeDiv.appendChild(removeButton);
+    }
+
+}
