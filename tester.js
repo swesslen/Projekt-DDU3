@@ -5,6 +5,10 @@ const requestsArray = [];
 const urlCreate = new URL("http://localhost:8000/create");
 const urlLogin = new URL("http://localhost:8000/login");
 const urlLoginDashboard = new URL("http://localhost:8000/login/dashboard");
+const urlGetUserJokes = new URL("http://localhost:8000/favoriteJokes/user?name=test");
+const urlSendJoke = new URL("http://localhost:8000/login/dashboard/collection?username=test");
+const urlSendJokeButFail = new URL("http://localhost:8000/login/dashboard/collection?username=korgkingen");
+const urlSendJokeNoName = new URL("http://localhost:8000/login/dashboard/collection");
 
 //Endpoint: "/create"
 // Status: 200
@@ -189,7 +193,10 @@ requestsArray.push(req7);
 async function req8() {
     const body = {
         name: "test",
-        joke: "Varför gick fisken över vägen? Hitta nemo"
+        joke: {
+            joke: "Varför gick fisken över vägen? Hitta nemo",
+            status: "favorite"
+        }
     };
     try {
         const response = await fetch(urlLoginDashboard, {
@@ -235,6 +242,152 @@ async function req9() {
 }
 requestsArray.push(req9);
 
+//Endpoint: "/favouritJokes/user?name=${user.name}"
+//Status 200
+async function req10() {
+    try {
+        const response = await fetch(urlGetUserJokes);
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlGetUserJokes.pathname,
+            method: "GET",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req10);
+
+//Endpoint: "/login/dashboard/collection" - Method: "POST"
+//Status 200
+async function req11() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJoke, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJoke.pathname,
+            method: "POST",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req11);
+
+//Status 404
+async function req12() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJokeButFail, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeButFail.pathname,
+            method: "POST",
+            expectedStatus: 404
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req12);
+
+//Status 400
+async function req13() {
+    const body = {
+        joke: "Ett skämt",
+        status: "recieved"
+    };
+    try {
+        const response = await fetch(urlSendJokeNoName, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeNoName.pathname,
+            method: "POST",
+            expectedStatus: 400
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req13);
+
+//Method - "DELETE"
+//Status 200
+async function req14() {
+    const body = {
+        name: "test",
+        joke: "Ett skämt"
+    };
+    try {
+        const response = await fetch(urlSendJoke, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJoke.pathname,
+            method: "DELETE",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req14);
+
+//Status 404
+async function req15() {
+    const body = {
+        name: "test",
+        joke: "En skämt"
+    };
+    try {
+        const response = await fetch(urlSendJoke, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJoke.pathname,
+            method: "DELETE",
+            expectedStatus: 404
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req15);
+
+let counter = 1;
 async function fetchOneByOne() {
     for (let requestFunction of requestsArray) {
         const divInfo = document.createElement("div");
@@ -246,7 +399,7 @@ async function fetchOneByOne() {
         const status = responseArray[1];
         const message = responseArray[2];
 
-        divInfo.textContent = `Pathway: ${info.path}, Method: ${info.method}, Expected Status: ${info.expectedStatus}`;
+        divInfo.textContent = `${counter}) Pathway: ${info.path}, Method: ${info.method}, Expected Status: ${info.expectedStatus}`;
         divStatus.textContent = `Status: ${status}`;
         divMessage.textContent = message;
 
@@ -255,6 +408,8 @@ async function fetchOneByOne() {
         htmlBody.append(divInfo);
         htmlBody.append(divStatus);
         htmlBody.append(divMessage);
+
+        counter++;
     }
     return;
 }

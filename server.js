@@ -24,7 +24,7 @@ async function handler(request) {
         });
     }
 
-    if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
+    if (url.pathname.startsWith("/favoriteJokes/user") && url.searchParams.has("name")) {
         if (request.method === "GET") {
             const user = jsonData.find(user => user.name === url.searchParams.get("name"));
             const body = user.favoriteJokes;
@@ -109,13 +109,12 @@ async function handler(request) {
             for (let user of jsonData) {
                 if (user.name === resource.name) {
                     for (let joke of user.favoriteJokes) {
-                        if (joke.joke === resource.joke.joke) {
+                        if (joke === resource.joke.joke) {
                             let response = new Response(JSON.stringify({ message: "The joke is already in your collection" }), {
                                 status: 409,
                                 headers: headersCors
                             })
                             return response
-
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)

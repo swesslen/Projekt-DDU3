@@ -12,11 +12,7 @@
   {
     "name": "testt",
     "password": "123",
-    "favoriteJokes": [
-      "Have you heard about the new corduroy pillows — they're making headlines!",
-      "Where do armies belong? In your sleeves.",
-      "Mom says I have no sense of direction, so I packed my bags and right."
-    ],
+    "favoriteJokes": [],
     "img": ""
   },
   {
@@ -40,12 +36,7 @@
   {
     "name": "bildtest",
     "password": "123",
-    "favoriteJokes": [
-      "My toddler is refusing to nap. He’s guilty of resisting a rest.",
-      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
-      "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
-      "My toddler is refusing to nap. He’s guilty of resisting a rest."
-    ],
+    "favoriteJokes": [],
     "img": {}
   },
   {
@@ -74,16 +65,7 @@
   {
     "name": "Elias",
     "password": "123",
-    "favoriteJokes": [
-      "What do you call a man wearing a rug on his head? Matt.",
-      "Where do armies belong? In your sleeves.",
-      "I was wondering why the baseball kept getting bigger and bigger. Then it hit me.",
-      "What’s the best air to breathe if you want to be rich? Millionaire.",
-      "Did you hear about the king that went to the dentist? He needed to get crowns.",
-      "I have a joke about kites, but it would just sail over your head.",
-      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
-      "My therapist told me I have problems expressing my emotions. Can’t say I’m surprised."
-    ],
+    "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -101,9 +83,7 @@
   {
     "name": "n30",
     "password": "test123",
-    "favoriteJokes": [
-      "Every night, I have hard time remembering something, but then it dawns on me."
-    ],
+    "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/87812/pexels-photo-87812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -128,7 +108,10 @@
     "name": "marre",
     "password": "hejG1",
     "favoriteJokes": [
-      "Can anyone tell me what oblivious means, because I have no idea."
+      {
+        "joke": "What sits on the seabed and has anxiety? A nervous wreck.",
+        "status": "recieved"
+      }
     ],
     "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
@@ -193,26 +176,5 @@
       }
     ],
     "img": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "Testbert",
-    "password": "Testing1",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1102912/pexels-photo-1102912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "wow1",
-    "password": "Wow123",
-    "favoriteJokes": [
-      {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
-        "status": "favorite"
-      },
-      {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

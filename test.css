@@ -1,3 +1,5 @@
 .request-info {
     color: crimson;
+    border-top: 1px solid black;
+    margin-top: 15px;
 }
