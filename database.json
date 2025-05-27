@@ -66,15 +66,15 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
+        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
         "status": "favorite"
       },
       {
-        "joke": "Mom texted me from the grocery store to say they’re out of pasta, and we’re penneless.",
+        "joke": "I was wondering why the baseball kept getting bigger and bigger. Then it hit me.",
         "status": "favorite"
       },
       {
-        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
         "status": "favorite"
       }
     ],
