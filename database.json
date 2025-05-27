@@ -59,10 +59,6 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
-        "status": "favorite"
-      },
-      {
         "joke": "Why did the girl toss a clock out the window? She wanted to see time fly.",
         "status": "favorite"
       }
