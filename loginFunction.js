@@ -173,6 +173,9 @@ async function loadDashbored(user) {
                 if(response.status === 409) {
                     alert(`${userToRecieve} already have the joke`)
                 }
+                if(response.status === 404) {
+                    alert(`${userToRecieve} does not exist`)
+                }
             });
 
             let removeButton = document.createElement("button");
