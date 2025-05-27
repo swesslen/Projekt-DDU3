@@ -3,6 +3,30 @@
     "name": "test",
     "password": "123",
     "favoriteJokes": [
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
+      {
+        "joke": "Ett skämt",
+        "status": "recieved"
+      },
       "A magician was walking down the street — then he turned into a store.",
       "RIP, boiling water. You will be mist.",
       "I have a joke about hunting for fossils, but you probably wouldn’t dig it.",
@@ -20,6 +44,21 @@
       "Varför gick fisken över vägen? Hitta nemo",
       "A guy walked into a bar, and lost the limbo contest.",
       "Varför gick fisken över vägen? Hitta nemo",
+      "A guy walked into a bar, and lost the limbo contest.",
+      {
+        "joke": "What sits on the seabed and has anxiety? A nervous wreck.",
+        "status": "favorite"
+      },
+      "Varför gick fisken över vägen? Hitta nemo",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
       "A guy walked into a bar, and lost the limbo contest."
     ],
     "img": ""
@@ -83,6 +122,34 @@
       },
       {
         "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
         "status": "favorite"
       }
     ],
