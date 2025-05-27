@@ -67,22 +67,10 @@
     "favoriteJokes": [
       {
         "joke": "To the person who stole my glasses: I will find you. I have contacts.",
-        "status": "recieved"
-      },
-      {
-        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
-        "status": "recieved"
-      },
-      {
-        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
         "status": "favorite"
       },
       {
-        "joke": "I was wondering why the baseball kept getting bigger and bigger. Then it hit me.",
-        "status": "favorite"
-      },
-      {
-        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "joke": "RIP, boiling water. You will be mist.",
         "status": "favorite"
       }
     ],
