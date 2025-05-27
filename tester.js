@@ -192,7 +192,7 @@ requestsArray.push(req7);
 
 async function req8() {
     const body = {
-        name: "wow",
+        name: "test",
         joke: {
             joke: "Varför gick fisken över vägen? Hitta nemo",
             status: "favorite"
