@@ -59,6 +59,9 @@
       "A guy walked into a bar, and lost the limbo contest.",
       "A guy walked into a bar, and lost the limbo contest.",
       "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
+      "A guy walked into a bar, and lost the limbo contest.",
       "A guy walked into a bar, and lost the limbo contest."
     ],
     "img": ""
@@ -122,6 +125,18 @@
       },
       {
         "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
         "status": "favorite"
       },
       {
