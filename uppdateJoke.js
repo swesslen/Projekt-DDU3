@@ -15,5 +15,6 @@ export async function uppdateJoke(resource) {
             }
         }
     }
+    return false
 }
 
