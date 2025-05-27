@@ -63,6 +63,10 @@
         "status": "favorite"
       },
       {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
         "joke": "I can tolerate algebra, maybe even a little calculus but geometry is where I draw the line.",
         "status": "favorite"
       },
@@ -214,6 +218,14 @@
     "favoriteJokes": [
       {
         "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "recieved"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "recieved"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
         "status": "favorite"
       },
       {
@@ -234,6 +246,10 @@
       },
       {
         "joke": "I tried to make up a joke about ghost but I couldn't. It had plenty of spirit but no body.",
+        "status": "favorite"
+      },
+      {
+        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
         "status": "favorite"
       }
     ],
