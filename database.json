@@ -3,13 +3,6 @@
     "name": "test",
     "password": "123",
     "favoriteJokes": [
-      "A magician was walking down the street — then he turned into a store.",
-      "RIP, boiling water. You will be mist.",
-      "I have a joke about hunting for fossils, but you probably wouldn’t dig it.",
-      "I love telling Dad jokes. Sometimes, he even laughs.",
-      "I failed my calculus exam because I was sitting in the middle of identical twins — I couldn’t differentiate between them.",
-      "I have a joke about time travel, but you guys didn’t get it.",
-      "I tried to make up a joke about ghost but I couldn't. It had plenty of spirit but no body.",
       "Every night, I have hard time remembering something, but then it dawns on me.",
       "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
       "I have a joke about pizza, but it’s too cheesy."
@@ -66,15 +59,15 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
-        "status": "recieved"
-      },
-      {
-        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
         "status": "favorite"
       },
       {
-        "joke": "RIP, boiling water. You will be mist.",
+        "joke": "I can tolerate algebra, maybe even a little calculus but geometry is where I draw the line.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Why did the girl toss a clock out the window? She wanted to see time fly.",
         "status": "favorite"
       }
     ],
@@ -214,5 +207,36 @@
     "password": "Testing1",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/1102912/pexels-photo-1102912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "wow1",
+    "password": "Wow123",
+    "favoriteJokes": [
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I can tolerate algebra, maybe even a little calculus but geometry is where I draw the line.",
+        "status": "recieved"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I used to be able to play piano by ear, but now I have to use my hands.",
+        "status": "favorite"
+      },
+      {
+        "joke": "I tried to make up a joke about ghost but I couldn't. It had plenty of spirit but no body.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

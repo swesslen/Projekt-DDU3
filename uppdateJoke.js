@@ -1,0 +1,19 @@
+export async function uppdateJoke(resource) {
+    const filePath = "./database.json";
+    const jsonString = await Deno.readTextFile(filePath);
+    const jsonData = JSON.parse(jsonString);
+    for(let user of jsonData) {
+
+        for(let jokeObject of user.favoriteJokes) {
+            console.log(jokeObject)
+            console.log(jokeObject.status)
+            if(jokeObject.joke === resource.joke) {
+                console.log(`${jokeObject.status} = ${resource.status}`)
+                jokeObject.status = resource.status;
+                await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
+                return true
+            }
+        }
+    }
+}
+
