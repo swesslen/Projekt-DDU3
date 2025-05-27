@@ -387,6 +387,57 @@ async function req15() {
 }
 requestsArray.push(req15);
 
+//Method - "PUT"
+//Status 200
+async function req16() {
+    const body = {
+        joke: "Ett skämt",
+        status: "favorite"
+    };
+    try {
+        const response = await fetch(urlSendJokeNoName, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeNoName.pathname,
+            method: "PUT",
+            expectedStatus: 200
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req16);
+
+//Status 404
+async function req17() {
+    const body = {
+        joke: "En skämt",
+        status: "favorite"
+    };
+    try {
+        const response = await fetch(urlSendJokeNoName, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+        const resource = await response.json();
+        const requestInfo = {
+            path: urlSendJokeNoName.pathname,
+            method: "PUT",
+            expectedStatus: 404
+        };
+        return [requestInfo, response.status, resource.message ? resource.message : JSON.stringify(resource)];
+    } catch (error) {
+        console.error("Fel:", error);
+    }
+}
+requestsArray.push(req17);
+
 let counter = 1;
 async function fetchOneByOne() {
     for (let requestFunction of requestsArray) {
@@ -399,7 +450,7 @@ async function fetchOneByOne() {
         const status = responseArray[1];
         const message = responseArray[2];
 
-        divInfo.textContent = `${counter}) Pathway: ${info.path}, Method: ${info.method}, Expected Status: ${info.expectedStatus}`;
+        divInfo.textContent = `[#${counter}] Pathway: ${info.path}, Method: ${info.method}, Expected Status: ${info.expectedStatus}`;
         divStatus.textContent = `Status: ${status}`;
         divMessage.textContent = message;
 

@@ -5,7 +5,11 @@
     "favoriteJokes": [
       "Every night, I have hard time remembering something, but then it dawns on me.",
       "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
-      "I have a joke about pizza, but it’s too cheesy."
+      "I have a joke about pizza, but it’s too cheesy.",
+      {
+        "joke": "Can anyone tell me what oblivious means, because I have no idea.",
+        "status": "favorite"
+      }
     ],
     "img": ""
   },
@@ -102,12 +106,7 @@
   {
     "name": "marre",
     "password": "hejG1",
-    "favoriteJokes": [
-      {
-        "joke": "What sits on the seabed and has anxiety? A nervous wreck.",
-        "status": "recieved"
-      }
-    ],
+    "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
