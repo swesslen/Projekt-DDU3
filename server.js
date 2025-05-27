@@ -2,6 +2,9 @@ import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
 import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
 import { classForCheckPasswordAndName } from "./classForCheckPasswordAndName.js"
 import { deleteDataFromJsonFile } from "./deleteDataFromJsonFile.js"
+import { uppdateJoke } from "./uppdateJoke.js"
+
+
 async function handler(request) {
     let url = new URL(request.url);
     const filePath = "./database.json";
@@ -11,7 +14,7 @@ async function handler(request) {
     const headersCors = new Headers();
     headersCors.set("Content-Type", "application/json")
     headersCors.set("Access-Control-Allow-Origin", "*");
-    headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH");
+    headersCors.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS, PATCH, PUT");
     headersCors.set("Access-Control-Allow-Headers", "Content-Type");
 
     if (request.method === "OPTIONS") {
@@ -37,14 +40,14 @@ async function handler(request) {
             let resource = await request.json();  //{ joke: this.joke, status: this.status };
             let checkIfWeChange = await uppdateJoke(resource);
             console.log(checkIfWeChange)
-            if (checkIfWeChange) {
-                const response = new Response(JSON.stringify({ message: "Joke was added" }), {
+            if(checkIfWeChange) {
+                const response = new Response(JSON.stringify({message: "Joke was added"}), {
                     status: 200,
                     headers: headersCors
                 });
                 return response;
             } else {
-                const response = new Response(JSON.stringify({ message: "Did not find the joke" }), {
+                const response = new Response(JSON.stringify({message: "Did not find the joke"}), {
                     status: 404,
                     headers: headersCors
                 });
@@ -55,7 +58,6 @@ async function handler(request) {
             if (url.searchParams.has("username")) {
                 const name = url.searchParams.get("username");
                 const resource = await request.json();
-                console.log("Skämtet som skickas:", resource);
 
                 for (let user of jsonData) {
                     if (user.name === name) {
@@ -84,9 +86,7 @@ async function handler(request) {
         }
         if (request.method === "DELETE") {
             let resource = await request.json();
-            console.log(resource)
             let didWeFindTheJoke = await deleteDataFromJsonFile(resource);
-            console.log(didWeFindTheJoke)
             if (didWeFindTheJoke === true) {
                 let response = new Response(JSON.stringify({ message: "Delete " }), {
                     status: 200,
@@ -125,7 +125,6 @@ async function handler(request) {
                     return response
                 }
             }
-
         }
     }
 
@@ -133,7 +132,6 @@ async function handler(request) {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
-            console.log(classForCheckPasswordAnswerAndName)
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,

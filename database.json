@@ -2,7 +2,11 @@
   {
     "name": "test",
     "password": "123",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      "Every night, I have hard time remembering something, but then it dawns on me.",
+      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
+      "I have a joke about pizza, but it’s too cheesy."
+    ],
     "img": ""
   },
   {
@@ -46,15 +50,7 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
-        "status": "favorite"
-      },
-      {
-        "joke": "Mom texted me from the grocery store to say they’re out of pasta, and we’re penneless.",
-        "status": "favorite"
-      },
-      {
-        "joke": "What kind of jewelry do rabbits wear? 14 carrot gold.",
+        "joke": "Why did the girl toss a clock out the window? She wanted to see time fly.",
         "status": "favorite"
       }
     ],
