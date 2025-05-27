@@ -58,13 +58,21 @@ async function handler(request) {
             if (url.searchParams.has("username")) {
                 const name = url.searchParams.get("username");
                 const resource = await request.json();
+                console.log(resource)
 
                 for (let user of jsonData) {
                     if (user.name === name) {
+                        for(let jokeObject of user.favoriteJokes) {
+                            if(jokeObject.joke === resource.joke) {
+                                const response = new Response(JSON.stringify("Joke already exist"), {
+                                    status: 409,
+                                    headers: headersCors
+                                });
+                                return response;
+                            }
+                        }
                         user.favoriteJokes.unshift(resource);
-
                         await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
-
                         const response = new Response(JSON.stringify("Joke was sent to user"), {
                             status: 200,
                             headers: headersCors

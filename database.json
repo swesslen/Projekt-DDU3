@@ -48,12 +48,7 @@
   {
     "name": "wow",
     "password": "1",
-    "favoriteJokes": [
-      {
-        "joke": "Why did the girl toss a clock out the window? She wanted to see time fly.",
-        "status": "favorite"
-      }
-    ],
+    "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -176,5 +171,34 @@
       }
     ],
     "img": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1102912/pexels-photo-1102912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "wow1",
+    "password": "Wow123",
+    "favoriteJokes": [
+      {
+        "joke": "To the person who stole my diary and then died: My thoughts are with your family.",
+        "status": "recieved"
+      },
+      {
+        "joke": "Why did the girl toss a clock out the window? She wanted to see time fly.",
+        "status": "recieved"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      },
+      {
+        "joke": "What do you call a man wearing a rug on his head? Matt.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
