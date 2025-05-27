@@ -7,7 +7,7 @@ export async function uppdateJoke(resource) {
         for(let jokeObject of user.favoriteJokes) {
             console.log(jokeObject)
             console.log(jokeObject.status)
-            if(jokeObject.joke === resource.joke) {
+            if(jokeObject.joke === resource.joke && jokeObject.status === "recieved") {
                 console.log(`${jokeObject.status} = ${resource.status}`)
                 jokeObject.status = resource.status;
                 await Deno.writeTextFile(filePath, JSON.stringify(jsonData, null, 2));
