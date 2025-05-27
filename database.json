@@ -67,6 +67,14 @@
     "favoriteJokes": [
       {
         "joke": "To the person who stole my glasses: I will find you. I have contacts.",
+        "status": "recieved"
+      },
+      {
+        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
+        "status": "recieved"
+      },
+      {
+        "joke": "To the person who stole my glasses: I will find you. I have contacts.",
         "status": "favorite"
       },
       {
