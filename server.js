@@ -33,6 +33,24 @@ async function handler(request) {
     }
 
     if (url.pathname === "/login/dashboard/collection") {
+        if (request.method === "PUT") {
+            let resource = await request.json();  //{ joke: this.joke, status: this.status };
+            let checkIfWeChange = await uppdateJoke(resource);
+            console.log(checkIfWeChange)
+            if (checkIfWeChange) {
+                const response = new Response(JSON.stringify({ message: "Joke was added" }), {
+                    status: 200,
+                    headers: headersCors
+                });
+                return response;
+            } else {
+                const response = new Response(JSON.stringify({ message: "Did not find the joke" }), {
+                    status: 404,
+                    headers: headersCors
+                });
+                return response;
+            }
+        }
         if (request.method === "POST") {
             if (url.searchParams.has("username")) {
                 const name = url.searchParams.get("username");
