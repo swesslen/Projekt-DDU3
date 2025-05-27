@@ -2,12 +2,7 @@
   {
     "name": "test",
     "password": "123",
-    "favoriteJokes": [
-      {
-        "joke": "What sits on the seabed and has anxiety? A nervous wreck.",
-        "status": "favorite"
-      }
-    ],
+    "favoriteJokes": [],
     "img": ""
   },
   {
