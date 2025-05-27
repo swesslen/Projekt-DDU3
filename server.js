@@ -24,7 +24,7 @@ async function handler(request) {
         });
     }
 
-    if (url.pathname.startsWith("/favoriteJokes/user") && url.searchParams.has("name")) {
+    if (url.pathname.startsWith("/favoriteJokes") && url.searchParams.has("name")) {
         if (request.method === "GET") {
             const user = jsonData.find(user => user.name === url.searchParams.get("name"));
             const body = user.favoriteJokes;
@@ -39,7 +39,6 @@ async function handler(request) {
         if (request.method === "PUT") {
             let resource = await request.json();  //{ joke: this.joke, status: this.status };
             let checkIfWeChange = await uppdateJoke(resource);
-            console.log(checkIfWeChange)
             if(checkIfWeChange) {
                 const response = new Response(JSON.stringify({message: "Joke was added"}), {
                     status: 200,
@@ -58,7 +57,6 @@ async function handler(request) {
             if (url.searchParams.has("username")) {
                 const name = url.searchParams.get("username");
                 const resource = await request.json();
-                console.log(resource)
 
                 for (let user of jsonData) {
                     if (user.name === name) {
@@ -117,12 +115,13 @@ async function handler(request) {
             for (let user of jsonData) {
                 if (user.name === resource.name) {
                     for (let joke of user.favoriteJokes) {
-                        if (joke === resource.joke.joke) {
+                        if (joke.joke === resource.joke.joke) {
                             let response = new Response(JSON.stringify({ message: "The joke is already in your collection" }), {
                                 status: 409,
                                 headers: headersCors
                             })
                             return response
+
                         }
                     }
                     addFavoriteJokeToToUsersKey(resource.name, resource.joke)
