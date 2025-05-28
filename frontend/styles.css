@@ -216,12 +216,12 @@ input {
     color: azure;
 }
 
-.recieved {
+.received {
     background-color: azure;
     color: black;
 }
 
-.recieved,
+.received,
 .favorite {
     padding: 10px;
     margin: 10px;

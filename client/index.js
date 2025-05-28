@@ -134,8 +134,8 @@ async function loadDashbored(user) {
                 this.styleFavorite(jokeDiv);
             }
 
-            if (this.status === "recieved") {
-                this.styleRecieved(jokeDiv);
+            if (this.status === "received") {
+                this.styleReceived(jokeDiv);
             }
 
             return jokeDiv;
@@ -158,7 +158,7 @@ async function loadDashbored(user) {
 
             sendButton.addEventListener("click", async () => {
                 let userToRecieve = prompt("Who would you like to send this to?");
-                let sentJoke = { joke: this.joke, status: "recieved" };
+                let sentJoke = { joke: this.joke, status: "received" };
 
                 const request = new Request(`http://localhost:8000/login/dashboard/collection?username=${userToRecieve}`, {
                     method: "POST",
@@ -206,8 +206,8 @@ async function loadDashbored(user) {
             buttonDiv.appendChild(removeButton);
         }
 
-        styleRecieved(jokeDiv) {
-            jokeDiv.setAttribute("class", "recieved")
+        styleReceived(jokeDiv) {
+            jokeDiv.setAttribute("class", "received")
 
             let buttonDiv = document.createElement("div");
             buttonDiv.setAttribute("class", "buttonDiv")

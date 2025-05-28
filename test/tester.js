@@ -265,7 +265,7 @@ requestsArray.push(req10);
 async function req11() {
     const body = {
         joke: "Ett skämt",
-        status: "recieved"
+        status: "received"
     };
     try {
         const response = await fetch(urlSendJoke, {
@@ -290,7 +290,7 @@ requestsArray.push(req11);
 async function req12() {
     const body = {
         joke: "Ett skämt",
-        status: "recieved"
+        status: "received"
     };
     try {
         const response = await fetch(urlSendJokeButFail, {
@@ -315,7 +315,7 @@ requestsArray.push(req12);
 async function req13() {
     const body = {
         joke: "Ett skämt",
-        status: "recieved"
+        status: "received"
     };
     try {
         const response = await fetch(urlSendJokeNoName, {
