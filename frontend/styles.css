@@ -4,9 +4,8 @@ body {
     color: azure;
 }
 
-section {
-    margin-top: 50px;
-    margin: 50px 20px 0 20px;
+section, #create-section {
+    margin: 125px 20px 0 20px;
 }
 
 #login-section {
@@ -37,7 +36,6 @@ a:hover {
 #create-section {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
 }
 
 .login-container {
@@ -61,10 +59,15 @@ input {
     width: 100%;
     padding: 10px;
     margin-top: 50px;
+    margin-bottom: 16px;
     border: 1px solid black;
     border-radius: 25px;
     background-color: #FC814A;
     font-weight: bold;
+}
+
+#confirmTheAccount {
+    margin: 0px;
 }
 
 .login-button:hover {

@@ -1,227 +1,26 @@
 [
   {
-    "name": "test",
-    "password": "123",
-    "favoriteJokes": [
-      "Every night, I have hard time remembering something, but then it dawns on me.",
-      "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
-      "I have a joke about pizza, but it’s too cheesy.",
-      "A guy walked into a bar, and lost the limbo contest."
-    ],
-    "img": ""
-  },
-  {
-    "name": "testt",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": ""
-  },
-  {
-    "name": "testtt",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": ""
-  },
-  {
-    "name": "testtt3",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": ""
-  },
-  {
-    "name": "Gustav",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": ""
-  },
-  {
-    "name": "bildtest",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": {}
-  },
-  {
-    "name": "bildtest2",
-    "password": "123",
-    "favoriteJokes": [],
-    "img": {}
-  },
-  {
-    "name": "wow",
-    "password": "1",
-    "favoriteJokes": [
-      {
-        "joke": "Varför gick fisken över vägen? Hitta nemo",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "profiltest",
+    "name": "simon",
     "password": "1",
     "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1420440/pexels-photo-1420440.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    "img": "https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
-    "name": "Elias",
-    "password": "123",
+    "name": "elias",
+    "password": "1",
     "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/2444429/pexels-photo-2444429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    "img": "https://images.pexels.com/photos/573302/pexels-photo-573302.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
-    "name": "testest",
-    "password": "1234",
+    "name": "gustaf",
+    "password": "1",
     "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    "img": "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
-    "name": "testestr",
-    "password": "q234",
+    "name": "markus",
+    "password": "1",
     "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/459335/pexels-photo-459335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "n30",
-    "password": "test123",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/87812/pexels-photo-87812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "lknln",
-    "password": "lklk",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "eedwedw",
-    "password": "1Ndsfsdfsdf",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "eedw",
-    "password": "ssssssN2",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1232594/pexels-photo-1232594.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "marre",
-    "password": "hejG1",
-    "favoriteJokes": [
-      {
-        "joke": "What sits on the seabed and has anxiety? A nervous wreck.",
-        "status": "recieved"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "elias22",
-    "password": "Hej22",
-    "favoriteJokes": [
-      {
-        "joke": "Why can't the sailor learn the alphabet? Because he kept getting lost at C.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I was going to go on an expensive vacation with a classical pianist, but he was too baroque.",
-        "status": "favorite"
-      },
-      {
-        "joke": "A guy walked into a bar, and lost the limbo contest.",
-        "status": "favorite"
-      },
-      {
-        "joke": "Mom is mad at me because she asked me to sync her phone, so I threw it in the ocean.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
-        "status": "favorite"
-      },
-      {
-        "joke": "It’s raining cats and dogs, so be careful not to step in a poodle.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I have a joke about time travel, but you guys didn’t get it.",
-        "status": "favorite"
-      },
-      {
-        "joke": "What do you call a bear with no teeth? A gummy bear.",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/68507/spring-flowers-flowers-collage-floral-68507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "Elias22",
-    "password": "HejHej22",
-    "favoriteJokes": [
-      {
-        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
-        "status": "recieved"
-      },
-      {
-        "joke": "What’s the best air to breathe if you want to be rich? Millionaire.",
-        "status": "favorite"
-      },
-      {
-        "joke": "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
-        "status": "favorite"
-      },
-      {
-        "joke": "Mom says I have no sense of direction, so I packed my bags and right.",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "Testbert",
-    "password": "Testing1",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1102912/pexels-photo-1102912.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "wow1",
-    "password": "Wow123",
-    "favoriteJokes": [],
-    "img": "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "test2",
-    "password": "Test2",
-    "favoriteJokes": [
-      {
-        "joke": "I have a few jokes about retired people, but none of them work.",
-        "status": "favorite"
-      },
-      {
-        "joke": "If money doesn’t grow on trees, then why do banks have branches?",
-        "status": "favorite"
-      },
-      {
-        "joke": "To the person who stole my bed: I won't rest until I find you.",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/40192/woman-happiness-sunrise-silhouette-40192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-  },
-  {
-    "name": "GustavÄkta",
-    "password": "Hej123",
-    "favoriteJokes": [
-      {
-        "joke": "I just paid $100 for a belt that doesn’t fit — what a huge waist!",
-        "status": "favorite"
-      },
-      {
-        "joke": "Mom said I should do lunges to stay in shape. That would be a big step forward.",
-        "status": "favorite"
-      }
-    ],
-    "img": "https://images.pexels.com/photos/418831/pexels-photo-418831.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    "img": "https://images.pexels.com/photos/1227513/pexels-photo-1227513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
