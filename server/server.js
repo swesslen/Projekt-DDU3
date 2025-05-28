@@ -62,7 +62,7 @@ async function handler(request) {
                     if (user.name === name) {
                         for (let jokeObject of user.favoriteJokes) {
                             if (jokeObject.joke === resource.joke) {
-                                const response = new Response(JSON.stringify("Joke already exist"), {
+                                const response = new Response(JSON.stringify("Joke already in users collection"), {
                                     status: 409,
                                     headers: headersCors
                                 });
@@ -94,13 +94,13 @@ async function handler(request) {
             let resource = await request.json();
             let didWeFindTheJoke = await deleteJokeFromDatabase(resource);
             if (didWeFindTheJoke === true) {
-                let response = new Response(JSON.stringify({ message: "Delete " }), {
+                let response = new Response(JSON.stringify({ message: "This joke has been deleted" }), {
                     status: 200,
                     headers: headersCors
                 })
                 return response
             } else {
-                let response = new Response(JSON.stringify({ message: "Not found to delete " }), {
+                let response = new Response(JSON.stringify({ message: "Could not find joke" }), {
                     status: 404,
                     headers: headersCors
                 })
@@ -148,7 +148,7 @@ async function handler(request) {
             }
             for (let user of jsonData) {
                 if (user.name == resource.name) {
-                    let response = new Response(JSON.stringify({ message: "User already exist" }), {
+                    let response = new Response(JSON.stringify({ message: "User already exists" }), {
                         status: 409,
                         headers: headersCors
                     });
@@ -156,7 +156,7 @@ async function handler(request) {
                 }
             }
             if (!isLoginValid) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement" }), {
                     status: 422,
                     headers: headersCors
                 });
@@ -196,11 +196,11 @@ async function handler(request) {
                 });
                 return response;
             }
-            
+
         }
     }
 
-    return new Response(JSON.stringify("Not found"), {
+    return new Response(JSON.stringify("Bad request"), {
         status: 400,
         headers: headersCors
     });
