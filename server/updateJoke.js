@@ -1,4 +1,4 @@
-export async function uppdateJoke(resource) {
+export async function updateJoke(resource) {
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
     const jsonData = JSON.parse(jsonString);

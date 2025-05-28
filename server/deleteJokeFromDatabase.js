@@ -1,4 +1,4 @@
-export async function deleteDataFromJsonFile(resource) {
+export async function deleteJokeFromDatabase(resource) {
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
     const jsonData = JSON.parse(jsonString);

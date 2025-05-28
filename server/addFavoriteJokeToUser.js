@@ -1,4 +1,4 @@
-export async function addFavoriteJokeToToUsersKey(userName, joke) {
+export async function addFavoriteJokeToUser(userName, joke) {
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
     const jsonData = JSON.parse(jsonString)

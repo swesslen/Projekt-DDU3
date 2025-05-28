@@ -1,8 +1,8 @@
-import { addToTheJsonFileFunction } from "./addToTheJsonFileFunction.js"
-import { addFavoriteJokeToToUsersKey } from "./addFavoriteJokeToToUsersKey.js"
-import { classForCheckPasswordAndName } from "./classForCheckPasswordAndName.js"
-import { deleteDataFromJsonFile } from "./deleteDataFromJsonFile.js"
-import { uppdateJoke } from "./uppdateJoke.js"
+import { addToDatabase } from "./addToDatabase.js"
+import { addFavoriteJokeToUser } from "./addFavoriteJokeToUser.js"
+import { validLogin } from "./validLoginClass.js"
+import { deleteJokeFromDatabase } from "./deleteJokeFromDatabase.js"
+import { updateJoke } from "./updateJoke.js"
 
 
 async function handler(request) {
@@ -38,7 +38,7 @@ async function handler(request) {
     if (url.pathname === "/login/dashboard/collection") {
         if (request.method === "PUT") {
             let resource = await request.json();  //{ joke: this.joke, status: this.status };
-            let checkIfWeChange = await uppdateJoke(resource);
+            let checkIfWeChange = await updateJoke(resource);
             if(checkIfWeChange) {
                 const response = new Response(JSON.stringify({message: "Joke was added"}), {
                     status: 200,
@@ -92,7 +92,7 @@ async function handler(request) {
         }
         if (request.method === "DELETE") {
             let resource = await request.json();
-            let didWeFindTheJoke = await deleteDataFromJsonFile(resource);
+            let didWeFindTheJoke = await deleteJokeFromDatabase(resource);
             if (didWeFindTheJoke === true) {
                 let response = new Response(JSON.stringify({ message: "Delete " }), {
                     status: 200,
@@ -124,7 +124,7 @@ async function handler(request) {
 
                         }
                     }
-                    addFavoriteJokeToToUsersKey(resource.name, resource.joke)
+                    addFavoriteJokeToUser(resource.name, resource.joke)
                     let response = new Response(JSON.stringify({ message: "The joke was added successfully" }), {
                         status: 200,
                         headers: headersCors
@@ -138,7 +138,7 @@ async function handler(request) {
     if (url.pathname === "/create") {
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            let classForCheckPasswordAnswerAndName = classForCheckPasswordAndName(resource) // true eller false
+            let isLoginValid = validLogin(resource) // true eller false
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
@@ -155,7 +155,7 @@ async function handler(request) {
                     return response;
                 }
             }
-            if (!classForCheckPasswordAnswerAndName) {
+            if (!isLoginValid) {
                 let response = new Response(JSON.stringify({ message: "The password does not meet the requirement " }), {
                     status: 422,
                     headers: headersCors
@@ -163,7 +163,7 @@ async function handler(request) {
                 return response;
             }
 
-            addToTheJsonFileFunction(resource);
+            addToDatabase(resource);
             let response = new Response(JSON.stringify({ message: "Account created successfully!" }), {
                 status: 200,
                 headers: headersCors

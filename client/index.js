@@ -8,12 +8,12 @@ let dashboredSection = document.getElementById("dashbored-section");
 
 let collectionButton = document.getElementById("my-collection");
 let generateJokeButton = document.getElementById("generate-joke");
-let testTextJoke = document.getElementById("test-text-joke");
+let testTextJoke = document.getElementById("jokeP");
 
 let collectionSection = document.getElementById("collection-section");
 let backToStartButton = document.getElementById("back-to-start");
 
-let AddToCollectionButton = document.getElementById("testButton");
+let AddToCollectionButton = document.getElementById("collectionButton");
 let checkResponseForAddJoke = document.getElementById("checkResponseForAddJoke");
 
 let jokeSection = document.getElementById("joke-section");

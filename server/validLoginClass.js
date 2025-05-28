@@ -1,5 +1,5 @@
 
-export function classForCheckPasswordAndName(resource) {
+export function validLogin(resource) {
     console.log(resource)
 
     class UserPassword {
