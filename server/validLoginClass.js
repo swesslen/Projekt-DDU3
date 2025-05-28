@@ -1,6 +1,5 @@
 
 export function validLogin(resource) {
-    console.log(resource)
 
     class UserPassword {
         constructor(data) {
@@ -56,7 +55,6 @@ export function validLogin(resource) {
     }
 
     let user = new UserPassword(resource)
-    console.log(user.isValid())
     return user.isValid()
 
 }
