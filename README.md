@@ -1,6 +1,6 @@
 # Projekt-DDU3
 
-Grupp: Elias Norrheden, Gustav Erkki, Markus Cehic, Simon Wesslen
+Grupp: Elias Norrheden, Gustav Erkki, Markus Cehic, Simon Wesslén
 
 Beskrivning: 
     Vår tanke med projektet är att bygga en dashboard som genererar skämt samt där varje andvändare har möljighet att spara skämten och kunna skicka dessa till andra andvändare. 
