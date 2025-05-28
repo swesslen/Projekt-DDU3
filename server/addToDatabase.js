@@ -15,7 +15,7 @@ export async function addToDatabase(resource) {
 }
 
 async function getRandomImage() {
-    const keywords = ["nature", "city", "mountain", "cat", "forest", "sunset"];
+    const keywords = ["nature", "dog", "animals", "cat", "lion", "donkey"];
     const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];
 
     const response = await fetch(`https://api.pexels.com/v1/search?query=${randomKeyword}&per_page=1&page=${Math.floor(Math.random() * 50) + 1}`, {
