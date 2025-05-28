@@ -8,7 +8,12 @@
   {
     "name": "elias",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      {
+        "joke": "I have a joke about inferiority complexes, but it’s not very good.",
+        "status": "favorite"
+      }
+    ],
     "img": "https://images.pexels.com/photos/573302/pexels-photo-573302.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
