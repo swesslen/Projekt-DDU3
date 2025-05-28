@@ -37,7 +37,7 @@ async function handler(request) {
 
     if (url.pathname === "/login/dashboard/collection") {
         if (request.method === "PUT") {
-            let resource = await request.json();  //{ joke: this.joke, status: this.status };
+            let resource = await request.json();  
             let checkIfWeChange = await updateJoke(resource);
             if (checkIfWeChange) {
                 const response = new Response(JSON.stringify({ message: "Joke was added" }), {
