@@ -168,7 +168,7 @@ async function loadDashbored(user) {
 
                 let response = await fetch(request);
                 if(response.status === 200) {
-                    alert(`You have send a joke to ${userToRecieve}`)
+                    alert(`You have sent a joke to ${userToRecieve}`)
                 }
                 if(response.status === 409) {
                     alert(`${userToRecieve} already have the joke`)
