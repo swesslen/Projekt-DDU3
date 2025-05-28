@@ -27,5 +27,11 @@
     "password": "1",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/1227513/pexels-photo-1227513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1157255/pexels-photo-1157255.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
