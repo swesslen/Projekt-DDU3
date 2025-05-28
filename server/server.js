@@ -39,14 +39,14 @@ async function handler(request) {
         if (request.method === "PUT") {
             let resource = await request.json();  //{ joke: this.joke, status: this.status };
             let checkIfWeChange = await updateJoke(resource);
-            if(checkIfWeChange) {
-                const response = new Response(JSON.stringify({message: "Joke was added"}), {
+            if (checkIfWeChange) {
+                const response = new Response(JSON.stringify({ message: "Joke was added" }), {
                     status: 200,
                     headers: headersCors
                 });
                 return response;
             } else {
-                const response = new Response(JSON.stringify({message: "Did not find the joke"}), {
+                const response = new Response(JSON.stringify({ message: "Did not find the joke" }), {
                     status: 404,
                     headers: headersCors
                 });
@@ -60,8 +60,8 @@ async function handler(request) {
 
                 for (let user of jsonData) {
                     if (user.name === name) {
-                        for(let jokeObject of user.favoriteJokes) {
-                            if(jokeObject.joke === resource.joke) {
+                        for (let jokeObject of user.favoriteJokes) {
+                            if (jokeObject.joke === resource.joke) {
                                 const response = new Response(JSON.stringify("Joke already exist"), {
                                     status: 409,
                                     headers: headersCors
@@ -200,6 +200,10 @@ async function handler(request) {
         }
     }
 
+    return new Response(JSON.stringify("Not found"), {
+        status: 400,
+        headers: headersCors
+    });
 }
 
 Deno.serve(handler);
