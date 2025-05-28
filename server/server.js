@@ -173,7 +173,6 @@ async function handler(request) {
     }
 
     if (url.pathname === "/login") {
-
         if (request.method === "POST") {
             let resource = await request.json(); // { name: "test", password: "123" } t.ex
             if (resource.name == "" || resource.password == "") {
@@ -197,6 +196,7 @@ async function handler(request) {
                 });
                 return response;
             }
+            
         }
     }
 
