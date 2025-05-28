@@ -1,4 +1,4 @@
-export async function addToTheJsonFileFunction(resource) {
+export async function addToDatabase(resource) {
     const filePath = "./database.json";
     const jsonString = await Deno.readTextFile(filePath);
     const jsonData = JSON.parse(jsonString);

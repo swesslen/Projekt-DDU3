@@ -85,7 +85,7 @@ async function loadDashbored(user) {
             const newJoke = { joke: joke.joke, status: "favorite" };
             const exists = user.favoriteJokes.some(j => j.joke === joke);
             if (!exists) {
-                user.favoriteJokes.push(newJoke);
+                user.favoriteJokes.unshift(newJoke);
             }
 
         }
