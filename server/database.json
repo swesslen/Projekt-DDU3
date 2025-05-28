@@ -15,7 +15,19 @@
     "password": "1",
     "favoriteJokes": [
       {
-        "joke": "What do you call a bear with no teeth? A gummy bear.",
+        "joke": "I had a dream that I weighed less than a thousandth of a gram. I was like, 0mg.",
+        "status": "favorite"
+      },
+      {
+        "joke": "Mom asked me to put ketchup on the grocery list. Now I can't see anything.",
+        "status": "favorite"
+      },
+      {
+        "joke": "My boss told me to have a good day, so I went home!",
+        "status": "favorite"
+      },
+      {
+        "joke": "I have a joke about chemistry, but I don’t think it’ll get a reaction.",
         "status": "favorite"
       }
     ],

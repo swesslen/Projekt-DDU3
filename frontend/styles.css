@@ -3,6 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(to right, #3a7bd5, #00d2ff);
     color: azure;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .h1InLoginAndCreate {
     font-size: 30px;
@@ -141,11 +142,13 @@ input {
     background-color: green;
     justify-self: center;
     align-self: center;
+    border: 2px solid orange
 }
 
 .profile-section p {
     justify-self: center;
     align-self: center;
+    font-size: 25px;
 }
 
 .profile-section .button {
@@ -180,7 +183,9 @@ input {
     align-self: center;
     justify-self: center;
 }
-
+.border-under {
+    border-bottom: 2px solid orange;
+}
 
 
 #collection-section main {
@@ -190,6 +195,9 @@ input {
     gap: 20px;
     font-size: 20px;
     padding: 0px 150px 0px 150px;
+}
+#WantToHearABadJoke {
+    font-size: 26px;
 }
 
 #collection-header {
