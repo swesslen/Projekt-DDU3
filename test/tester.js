@@ -64,8 +64,8 @@ requestsArray.push(req2);
 //Status 409
 async function req3() {
     const body = {
-        name: "test",
-        password: "123"
+        name: "markus",
+        password: "1"
     };
     try {
         const response = await fetch(urlCreate, {
@@ -115,8 +115,8 @@ requestsArray.push(req4);
 //Status 200
 async function req5() {
     const body = {
-        name: "test",
-        password: "123"
+        name: "markus",
+        password: "1"
     };
     try {
         const response = await fetch(urlLogin, {
@@ -192,9 +192,9 @@ requestsArray.push(req7);
 
 async function req8() {
     const body = {
-        name: "elias",
+        name: "markus",
         joke: {
-            joke: "Varför gick fisken över vägen? Hitta nemo",
+            joke: "TESTSKÄMT",
             status: "favorite"
         }
     };
@@ -221,7 +221,7 @@ requestsArray.push(req8);
 async function req9() {
     const body = {
         name: "markus",
-        joke: "A guy walked into a bar, and lost the limbo contest."
+        joke: { joke: "A guy walked into a bar, and lost the limbo contest.", status: "favorite" }
     };
     try {
         const response = await fetch(urlLoginDashboard, {
