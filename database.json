@@ -183,5 +183,24 @@
     "password": "Wow123",
     "favoriteJokes": [],
     "img": "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "test2",
+    "password": "Test2",
+    "favoriteJokes": [
+      {
+        "joke": "I have a few jokes about retired people, but none of them work.",
+        "status": "favorite"
+      },
+      {
+        "joke": "If money doesn’t grow on trees, then why do banks have branches?",
+        "status": "favorite"
+      },
+      {
+        "joke": "To the person who stole my bed: I won't rest until I find you.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/40192/woman-happiness-sunrise-silhouette-40192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
