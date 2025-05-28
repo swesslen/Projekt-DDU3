@@ -5,7 +5,8 @@
     "favoriteJokes": [
       "Every night, I have hard time remembering something, but then it dawns on me.",
       "Every time I take my dog to the park, the ducks try to bite him. That’s what I get for buying a pure bread dog.",
-      "I have a joke about pizza, but it’s too cheesy."
+      "I have a joke about pizza, but it’s too cheesy.",
+      "A guy walked into a bar, and lost the limbo contest."
     ],
     "img": ""
   },
@@ -48,7 +49,12 @@
   {
     "name": "wow",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      }
+    ],
     "img": "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -202,5 +208,20 @@
       }
     ],
     "img": "https://images.pexels.com/photos/40192/woman-happiness-sunrise-silhouette-40192.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "GustavÄkta",
+    "password": "Hej123",
+    "favoriteJokes": [
+      {
+        "joke": "I just paid $100 for a belt that doesn’t fit — what a huge waist!",
+        "status": "favorite"
+      },
+      {
+        "joke": "Mom said I should do lunges to stay in shape. That would be a big step forward.",
+        "status": "favorite"
+      }
+    ],
+    "img": "https://images.pexels.com/photos/418831/pexels-photo-418831.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]
