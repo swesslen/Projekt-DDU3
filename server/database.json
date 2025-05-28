@@ -53,5 +53,11 @@
       }
     ],
     "img": "https://images.pexels.com/photos/50988/ape-berber-monkeys-mammal-affchen-50988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1181181/pexels-photo-1181181.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

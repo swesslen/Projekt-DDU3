@@ -185,7 +185,9 @@ input {
 }
 .border-under {
     border-bottom: 2px solid orange;
+    font-size: 25px;
 }
+
 
 
 #collection-section main {
