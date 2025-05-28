@@ -2,13 +2,23 @@
   {
     "name": "simon",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      {
+        "joke": "I'm reading an anti-gravity book, and I just can't put it down!",
+        "status": "favorite"
+      }
+    ],
     "img": "https://images.pexels.com/photos/3325908/pexels-photo-3325908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     "name": "elias",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "favorite"
+      }
+    ],
     "img": "https://images.pexels.com/photos/573302/pexels-photo-573302.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   },
   {
@@ -20,7 +30,23 @@
   {
     "name": "markus",
     "password": "1",
-    "favoriteJokes": [],
+    "favoriteJokes": [
+      "A guy walked into a bar, and lost the limbo contest.",
+      {
+        "joke": "I'm reading an anti-gravity book, and I just can't put it down!",
+        "status": "received"
+      },
+      {
+        "joke": "Varför gick fisken över vägen? Hitta nemo",
+        "status": "received"
+      }
+    ],
     "img": "https://images.pexels.com/photos/1227513/pexels-photo-1227513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+  },
+  {
+    "name": "Testbert",
+    "password": "Testing1",
+    "favoriteJokes": [],
+    "img": "https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
   }
 ]

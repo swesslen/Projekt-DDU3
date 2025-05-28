@@ -5,8 +5,8 @@ const requestsArray = [];
 const urlCreate = new URL("http://localhost:8000/create");
 const urlLogin = new URL("http://localhost:8000/login");
 const urlLoginDashboard = new URL("http://localhost:8000/login/dashboard");
-const urlGetUserJokes = new URL("http://localhost:8000/favoriteJokes/user?name=test");
-const urlSendJoke = new URL("http://localhost:8000/login/dashboard/collection?username=test");
+const urlGetUserJokes = new URL("http://localhost:8000/favoriteJokes/user?name=markus");
+const urlSendJoke = new URL("http://localhost:8000/login/dashboard/collection?username=markus");
 const urlSendJokeButFail = new URL("http://localhost:8000/login/dashboard/collection?username=korgkingen");
 const urlSendJokeNoName = new URL("http://localhost:8000/login/dashboard/collection");
 
@@ -192,7 +192,7 @@ requestsArray.push(req7);
 
 async function req8() {
     const body = {
-        name: "test",
+        name: "elias",
         joke: {
             joke: "Varför gick fisken över vägen? Hitta nemo",
             status: "favorite"
@@ -206,7 +206,7 @@ async function req8() {
         });
         const resource = await response.json();
         const requestInfo = {
-            path: urlLogin.pathname,
+            path: urlLoginDashboard.pathname,
             method: "PATCH",
             expectedStatus: 200
         };
@@ -220,7 +220,7 @@ requestsArray.push(req8);
 //Status 409
 async function req9() {
     const body = {
-        name: "test",
+        name: "markus",
         joke: "A guy walked into a bar, and lost the limbo contest."
     };
     try {
@@ -231,7 +231,7 @@ async function req9() {
         });
         const resource = await response.json();
         const requestInfo = {
-            path: urlLogin.pathname,
+            path: urlLoginDashboard.pathname,
             method: "PATCH",
             expectedStatus: 409
         };
@@ -391,8 +391,8 @@ requestsArray.push(req15);
 //Status 200
 async function req16() {
     const body = {
-        joke: "Ett skämt",
-        status: "favorite"
+        joke: "I'm reading an anti-gravity book, and I just can't put it down!",
+        status: "received"
     };
     try {
         const response = await fetch(urlSendJokeNoName, {
@@ -440,7 +440,10 @@ requestsArray.push(req17);
 
 let counter = 1;
 async function fetchOneByOne() {
+    let i = 1;
     for (let requestFunction of requestsArray) {
+        console.log(i);
+        i++;
         const divInfo = document.createElement("div");
         const divStatus = document.createElement("div");
         const divMessage = document.createElement("div");
