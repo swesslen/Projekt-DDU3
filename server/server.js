@@ -137,8 +137,8 @@ async function handler(request) {
 
     if (url.pathname === "/create") {
         if (request.method === "POST") {
-            let resource = await request.json(); // { name: "test", password: "123" } t.ex
-            let isLoginValid = validLogin(resource) // true eller false
+            let resource = await request.json(); 
+            let isLoginValid = validLogin(resource) 
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,

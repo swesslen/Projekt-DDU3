@@ -442,7 +442,7 @@ let counter = 1;
 async function fetchOneByOne() {
     let i = 1;
     for (let requestFunction of requestsArray) {
-        console.log(i);
+        
         i++;
         const divInfo = document.createElement("div");
         const divStatus = document.createElement("div");

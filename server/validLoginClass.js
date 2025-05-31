@@ -10,7 +10,6 @@ export function validLogin(resource) {
             return this._password;
         }
         set password(value) {
-            // Kollar så att lösenordet har minst 4 tecken samt om den innehåller minst ett nummer och stor bokstav 
             
             let arrayOfletter = value.split("");
             let checkIfItContainsOneNumber = false;
@@ -35,7 +34,7 @@ export function validLogin(resource) {
             return this._name;
         }
         set name(value) {
-            // Kollar om namnet är minst 3 tecken
+            
             let arrayOfletter = value.split("");
             if(arrayOfletter.length > 3) {
                 this._name = value;
