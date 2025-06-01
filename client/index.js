@@ -42,7 +42,7 @@ loginButton.addEventListener("click", function () {
             errorMessage.style.color = "red";
         }
         if (response.status === 401) {
-            errorMessage.textContent = "Incorret username or password";
+            errorMessage.textContent = "Incorrect username or password";
             errorMessage.style.color = "red";
         }
 
@@ -69,7 +69,7 @@ async function loadDashbored(user) {
         jokeSection.style.gridTemplateColumns = "1fr";
         jokeSection.style.gridTemplateRows = "100px 1fr 1fr"
     })
-    AddToCollectionButton.addEventListener("click", async function () { 
+    AddToCollectionButton.addEventListener("click", async function () {
         let request = new Request("http://localhost:8000/login/dashboard", {
             method: "PATCH",
             body: JSON.stringify({ name: user.name, joke: joke }),
@@ -163,13 +163,13 @@ async function loadDashbored(user) {
                 });
 
                 let response = await fetch(request);
-                if(response.status === 200) {
+                if (response.status === 200) {
                     alert(`You have sent a joke to ${userToRecieve}`)
                 }
-                if(response.status === 409) {
+                if (response.status === 409) {
                     alert(`${userToRecieve} already have the joke`)
                 }
-                if(response.status === 404) {
+                if (response.status === 404) {
                     alert(`${userToRecieve} does not exist`)
                 }
             });
@@ -215,16 +215,16 @@ async function loadDashbored(user) {
     <path fill-rule="evenodd" clip-rule="evenodd" d="M21.2287 6.60355C21.6193 6.99407 21.6193 7.62723 21.2287 8.01776L10.2559 18.9906C9.86788 19.3786 9.23962 19.3814 8.84811 18.9969L2.66257 12.9218C2.26855 12.5349 2.26284 11.9017 2.64983 11.5077L3.35054 10.7942C3.73753 10.4002 4.37067 10.3945 4.7647 10.7815L9.53613 15.4677L19.1074 5.89644C19.4979 5.50592 20.1311 5.50591 20.5216 5.89644L21.2287 6.60355Z" fill="#000000"/>
     </svg>`;
             acceptButton.addEventListener("click", async () => {
-                this.status = "favorite"; 
-                jokeDiv.setAttribute("class", "favorite"); 
+                this.status = "favorite";
+                jokeDiv.setAttribute("class", "favorite");
                 const updatedJoke = { joke: this.joke, status: "favorite" };
                 const request = new Request("http://localhost:8000/login/dashboard/collection", {
-                    method: "PUT", 
+                    method: "PUT",
                     body: JSON.stringify(updatedJoke),
                     headers: { "Content-Type": "application/json" }
                 });
                 let response = await fetch(request);
-                if(response.status === 200) {
+                if (response.status === 200) {
                     console.log("It worked")
                 }
 
@@ -259,7 +259,7 @@ async function loadDashbored(user) {
             buttonDiv.appendChild(removeButton);
         }
     }
-        
+
 }
 
 

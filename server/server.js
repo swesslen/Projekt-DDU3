@@ -37,7 +37,7 @@ async function handler(request) {
 
     if (url.pathname === "/login/dashboard/collection") {
         if (request.method === "PUT") {
-            let resource = await request.json();  
+            let resource = await request.json();
             let checkIfWeChange = await updateJoke(resource);
             if (checkIfWeChange) {
                 const response = new Response(JSON.stringify({ message: "Joke was added" }), {
@@ -137,8 +137,8 @@ async function handler(request) {
 
     if (url.pathname === "/create") {
         if (request.method === "POST") {
-            let resource = await request.json(); 
-            let isLoginValid = validLogin(resource) 
+            let resource = await request.json();
+            let isLoginValid = validLogin(resource)
             if (resource.name == "" || resource.password == "") {
                 let response = new Response(JSON.stringify({ message: "Missing username or password" }), {
                     status: 400,
@@ -156,7 +156,7 @@ async function handler(request) {
                 }
             }
             if (!isLoginValid) {
-                let response = new Response(JSON.stringify({ message: "The password does not meet the requirement" }), {
+                let response = new Response(JSON.stringify({ message: "The password does not meet the requirements" }), {
                     status: 422,
                     headers: headersCors
                 });
@@ -190,7 +190,7 @@ async function handler(request) {
                 });
                 return response;
             } else {
-                let response = new Response(JSON.stringify({ message: "Incorret username or password" }), {
+                let response = new Response(JSON.stringify({ message: "Incorrect username or password" }), {
                     status: 401,
                     headers: headersCors
                 });

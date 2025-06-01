@@ -16,7 +16,7 @@ createButton.addEventListener("click", function () {
 
     function fulfill(response) {
         if (response.status === 200) {
-            confirmTheAccount.textContent = "Account was succefull created";
+            confirmTheAccount.textContent = "Account was created successfully";
             confirmTheAccount.style.color = "lightgreen";
         }
         if (response.status === 400) {
@@ -24,11 +24,11 @@ createButton.addEventListener("click", function () {
             confirmTheAccount.style.color = "red";
         }
         if (response.status === 409) {
-            confirmTheAccount.textContent = "User already exist with that name";
+            confirmTheAccount.textContent = "This username already exists";
             confirmTheAccount.style.color = "red";
         }
         if (response.status === 422) {
-            confirmTheAccount.textContent = "The password does not meet the requirement, name must be least 3 letter and password least 4 letter and includes one big letter and one number ";
+            confirmTheAccount.textContent = "The password does not meet the requirements. Username must be least 3 letters and password at least 4 letters and include a capital letter and a number.";
             confirmTheAccount.style.color = "red";
         }
     }
